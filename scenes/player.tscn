@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhtn00310jucy"]
+[gd_scene load_steps=5 format=3 uid="uid://dhtn00310jucy"]
+
+[ext_resource type="Script" uid="uid://cldbibnmmw5k4" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://t6iqgeevpdy8" path="res://scripts/wheel.gd" id="2_g2els"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
 size = Vector2(8, 16)
@@ -6,10 +9,32 @@ size = Vector2(8, 16)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3vyb7"]
 size = Vector2(8, 16)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("steering_wheels", "fixed_wheels")]
+gravity_scale = 0.0
+script = ExtResource("1_3vyb7")
+steering_wheels = [NodePath("FWheelLeft"), NodePath("FWheelRight")]
+fixed_wheels = [NodePath("BWheelLeft"), NodePath("BWheelRight")]
+accel = 500.0
+steer_strength = 30.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_u8vuu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_3vyb7")
+
+[node name="FWheelLeft" type="Node2D" parent="."]
+position = Vector2(-4, -8)
+script = ExtResource("2_g2els")
+
+[node name="FWheelRight" type="Node2D" parent="."]
+position = Vector2(4, -8)
+script = ExtResource("2_g2els")
+
+[node name="BWheelLeft" type="Node2D" parent="."]
+position = Vector2(-4, 8)
+script = ExtResource("2_g2els")
+
+[node name="BWheelRight" type="Node2D" parent="."]
+position = Vector2(4, 8)
+script = ExtResource("2_g2els")
