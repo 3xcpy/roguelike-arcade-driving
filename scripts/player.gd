@@ -1,32 +1,25 @@
-extends RigidBody2D
-
-@export var steering_wheels: Array[Wheel]
-@export var fixed_wheels: Array[Wheel]
+extends CharacterBody2D
 
 @export var max_speed: float = 200.0
 @export var accel: float = 100.0
-@export var steer_strength: float = 15.0
+@export var steer_strength: float = 30.0
+@export var grip: float = 1.0
+
+@export var wheel_base: float = 16.0 # distance between the front and back wheel
 
 
 func _physics_process(delta: float) -> void:
 	var steer = Input.get_axis("steer_left", "steer_right") * steer_strength
 
-	for w in steering_wheels:
-		w.rotation = deg_to_rad(steer)
-		print(w.rotation)
-		print(w.global_rotation)
+	var front_wheel: Vector2 = position + wheel_base/2.0 * Vector2.UP.rotated(rotation)
+	var back_wheel: Vector2 = position - wheel_base/2.0 * Vector2.UP.rotated(rotation)
 
-	var accel_dir = -transform.y
-	var forward_speed: float = accel_dir.dot(linear_velocity)
-	if forward_speed < max_speed:
-		apply_force(accel_dir.normalized() * accel * delta * mass)
+	front_wheel += max_speed * Vector2.UP.rotated(rotation + deg_to_rad(steer)) * delta
+	back_wheel += max_speed * Vector2.UP.rotated(rotation) * delta
 
-	for w in steering_wheels:
-		update_wheel(w, delta)
-	for w in fixed_wheels:
-		update_wheel(w, delta)
-	
+	var new_location = (front_wheel + back_wheel) / 2
+	rotation = (front_wheel - back_wheel).angle()
+	position = new_location
 
-func update_wheel(w: Wheel, delta: float) -> void:
-	var force = w.calculate_steering_force(delta)
-	apply_force(force, w.position)
+	# velocity = (new_location - position).normalized() * accel
+	move_and_slide()
