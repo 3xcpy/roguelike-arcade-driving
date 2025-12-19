@@ -11,7 +11,6 @@ size = Vector2(8, 16)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_3vyb7")
 speed = 150.0
-steer_strength = 15.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5707964

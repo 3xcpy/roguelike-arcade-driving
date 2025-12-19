@@ -7,7 +7,6 @@ extends CharacterBody2D
 
 func _physics_process(delta: float) -> void:
 	var steer = Input.get_axis("steer_left", "steer_right") * deg_to_rad(steer_strength)
-	print(Input.get_axis("steer_left", "steer_right"))
 	velocity = transform.x * speed
 
 	var front_wheel: Vector2 = position + transform.x * (wheel_base/2.0)
