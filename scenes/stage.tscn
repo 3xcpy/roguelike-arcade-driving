@@ -7,6 +7,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6c5u0"]
 shader = ExtResource("2_kewym")
 shader_parameter/player_pos = Vector2(0, 0)
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/force = 8.4
 
 [node name="Stage" type="Node2D"]
 
@@ -17,8 +19,9 @@ position = Vector2(145, 229)
 z_index = -10
 texture_repeat = 2
 material = SubResource("ShaderMaterial_6c5u0")
-offset_right = 480.0
-offset_bottom = 313.0
+offset_right = 481.0
+offset_bottom = 321.0
+pivot_offset = Vector2(74, 114)
 texture = ExtResource("2_gi7kc")
 expand_mode = 1
 stretch_mode = 1
