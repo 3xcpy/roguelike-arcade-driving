@@ -11,7 +11,8 @@ size = Vector2(8, 16)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_3vyb7")
 speed = 150.0
-traction = 1.0
+traction = 5.0
+drift_trigger = 0.85
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5707964

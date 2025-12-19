@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var accel: float = 100.0
 @export var steer_strength: float = 30.0
 @export var traction: float = 10.0
+@export var drift_traction: float = 1.0
+@export var drift_trigger: float = 0.5
 
 @export var wheel_base: float = 16.0 # distance between the front and back wheel
 
@@ -22,6 +24,10 @@ func _physics_process(delta: float) -> void:
 
 	var new_dir = back_wheel.direction_to(front_wheel)
 
-	velocity = lerp(velocity, new_dir * velocity.length(), traction * delta)
+	var slide: float = velocity.normalized().dot(new_dir.normalized())
+	print(slide)
+	var current_traction = traction if slide > drift_trigger else drift_traction
+
+	velocity = lerp(velocity, new_dir * velocity.length(), current_traction * delta)
 	rotation = new_dir.angle()
 	move_and_slide()
