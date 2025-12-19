@@ -1,8 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://wb45rm4nabob"]
+[gd_scene load_steps=5 format=3 uid="uid://wb45rm4nabob"]
 
 [ext_resource type="PackedScene" uid="uid://dhtn00310jucy" path="res://scenes/player.tscn" id="1_8rem4"]
+[ext_resource type="Texture2D" uid="uid://phtn83sdcm6r" path="res://sprites/grid.png" id="2_gi7kc"]
+[ext_resource type="Shader" uid="uid://b2fhx3s3ytvx0" path="res://shaders/floor.gdshader" id="2_kewym"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6c5u0"]
+shader = ExtResource("2_kewym")
+shader_parameter/player_pos = Vector2(0, 0)
 
 [node name="Stage" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_8rem4")]
 position = Vector2(145, 229)
+
+[node name="Floor" type="TextureRect" parent="."]
+z_index = -10
+texture_repeat = 2
+material = SubResource("ShaderMaterial_6c5u0")
+offset_right = 480.0
+offset_bottom = 313.0
+texture = ExtResource("2_gi7kc")
+expand_mode = 1
+stretch_mode = 1
