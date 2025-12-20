@@ -59,10 +59,9 @@ rotation = 1.5707964
 texture = SubResource("PlaceholderTexture2D_3vyb7")
 
 [node name="DriftParticles" type="GPUParticles2D" parent="."]
-modulate = Color(18.892157, 18.892157, 18.892157, 1)
+modulate = Color(1.2799708, 1.2799708, 1.2799708, 1)
 z_index = -1
 position = Vector2(-8, 0)
-emitting = false
 amount = 16
 lifetime = 0.25
 process_material = SubResource("ParticleProcessMaterial_3vyb7")
