@@ -7,13 +7,16 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6c5u0"]
 shader = ExtResource("2_kewym")
 shader_parameter/player_pos = Vector2(0, 0)
-shader_parameter/center = Vector2(0.5, 0.5)
-shader_parameter/force = 8.4
+shader_parameter/center = Vector2(0.41, 0.5)
+shader_parameter/force = 0.1
+shader_parameter/ripple_freq = 100.0
+shader_parameter/ripple_speed = 3.0
+shader_parameter/ripple_distance = 0.23
 
 [node name="Stage" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_8rem4")]
-position = Vector2(145, 229)
+position = Vector2(51, 269)
 
 [node name="Floor" type="TextureRect" parent="."]
 z_index = -10
