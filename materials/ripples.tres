@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://nkbkv6udu707"]
+
+[ext_resource type="Shader" uid="uid://b2fhx3s3ytvx0" path="res://shaders/ripples.gdshader" id="1_s3iel"]
+
+[resource]
+shader = ExtResource("1_s3iel")
+shader_parameter/player_pos = Vector2(0, 0)
+shader_parameter/center = Vector2(0.22, 0.5)
+shader_parameter/force = 1.0
+shader_parameter/ripple_freq = 100.0
+shader_parameter/ripple_speed = 3.0
+shader_parameter/ripple_distance = 0.23

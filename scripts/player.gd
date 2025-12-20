@@ -25,7 +25,6 @@ func _physics_process(delta: float) -> void:
 	var new_dir = back_wheel.direction_to(front_wheel)
 
 	var slide: float = velocity.normalized().dot(new_dir.normalized())
-	print(slide)
 	var current_traction = traction if slide > drift_trigger else drift_traction
 
 	velocity = lerp(velocity, new_dir * velocity.length(), current_traction * delta)

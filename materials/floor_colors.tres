@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://csxiurfh7gu4o"]
+
+[ext_resource type="Shader" uid="uid://bmfbyicqapgkp" path="res://shaders/floor_colors.gdshader" id="1_he3yi"]
+
+[sub_resource type="Gradient" id="Gradient_he3yi"]
+colors = PackedColorArray(0.04468008, 4.1169842e-05, 0.16066092, 1, 0.7069764, 2.4257899e-05, 0.5177115, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_asn71"]
+gradient = SubResource("Gradient_he3yi")
+
+[resource]
+shader = ExtResource("1_he3yi")
+shader_parameter/gradient = SubResource("GradientTexture1D_asn71")

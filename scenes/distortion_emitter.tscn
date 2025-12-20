@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce4htckcwoxf"]
+
+[ext_resource type="Script" uid="uid://b6clcrk34j0p6" path="res://scripts/distortion_emitter.gd" id="1_h0iqs"]
+
+[node name="DistortionEmitter" type="Node2D"]
+script = ExtResource("1_h0iqs")

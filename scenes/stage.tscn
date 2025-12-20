@@ -1,17 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://wb45rm4nabob"]
+[gd_scene load_steps=8 format=3 uid="uid://wb45rm4nabob"]
 
 [ext_resource type="PackedScene" uid="uid://dhtn00310jucy" path="res://scenes/player.tscn" id="1_8rem4"]
 [ext_resource type="Texture2D" uid="uid://phtn83sdcm6r" path="res://sprites/grid.png" id="2_gi7kc"]
-[ext_resource type="Shader" uid="uid://b2fhx3s3ytvx0" path="res://shaders/floor.gdshader" id="2_kewym"]
+[ext_resource type="Shader" uid="uid://celbxoq3s5mxx" path="res://shaders/distortions.gdshader" id="2_kewym"]
+[ext_resource type="Script" uid="uid://d3cvnf1armkbm" path="res://scripts/floor.gd" id="4_6c5u0"]
+[ext_resource type="Material" uid="uid://csxiurfh7gu4o" path="res://materials/floor_colors.tres" id="5_2so7o"]
+[ext_resource type="PackedScene" uid="uid://ce4htckcwoxf" path="res://scenes/distortion_emitter.tscn" id="5_vcsse"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6c5u0"]
 shader = ExtResource("2_kewym")
-shader_parameter/player_pos = Vector2(0, 0)
-shader_parameter/center = Vector2(0.41, 0.5)
-shader_parameter/force = 0.1
-shader_parameter/ripple_freq = 100.0
-shader_parameter/ripple_speed = 3.0
-shader_parameter/ripple_distance = 0.23
+shader_parameter/weight_positions = PackedVector2Array(300, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/weights = PackedFloat32Array(0.155, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/weight_count = 1
+shader_parameter/weight_to_dist = 10000.0
+shader_parameter/falloff_distance = 0.3
+shader_parameter/falloff_variance = 0.05
 
 [node name="Stage" type="Node2D"]
 
@@ -19,12 +22,36 @@ shader_parameter/ripple_distance = 0.23
 position = Vector2(51, 269)
 
 [node name="Floor" type="TextureRect" parent="."]
-z_index = -10
+z_index = -100
 texture_repeat = 2
 material = SubResource("ShaderMaterial_6c5u0")
-offset_right = 481.0
+offset_left = -1.0
+offset_right = 480.0
 offset_bottom = 321.0
 pivot_offset = Vector2(74, 114)
 texture = ExtResource("2_gi7kc")
 expand_mode = 1
 stretch_mode = 1
+script = ExtResource("4_6c5u0")
+
+[node name="ColorModifier" type="ColorRect" parent="Floor"]
+material = ExtResource("5_2so7o")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 26)
+
+[node name="DistortionEmitter" parent="." instance=ExtResource("5_vcsse")]
+position = Vector2(352, 180)
+weight = 0.2
+
+[node name="DistortionEmitter2" parent="." instance=ExtResource("5_vcsse")]
+position = Vector2(234, 262)
+weight = 0.2
+
+[node name="DistortionEmitter3" parent="." instance=ExtResource("5_vcsse")]
+position = Vector2(390, 65)
+weight = 0.2
