@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed: float = 200.0
 @export var accel: float = 100.0
+@export var bounce_force: float = 100.0
 
 @export var steer_strength: float = 30.0
 
@@ -36,9 +37,17 @@ func _physics_process(delta: float) -> void:
 	else: # drifting
 		current_traction = drift_traction
 		drift_particles.amount_ratio = ((velocity.length() / speed) - 0.5) * 2.0
-		print(drift_particles.amount_ratio)
 		drift_particles.emitting = true
 
 	velocity = lerp(velocity, new_dir * velocity.length(), current_traction * delta)
 	rotation = new_dir.angle()
+
+	for i in get_slide_collision_count():
+		var col := get_slide_collision(i)
+		if col.get_collider():
+			if col.get_collider().is_in_group("LevelColliders"):
+				velocity = col.get_normal() * bounce_force
+				if col.get_normal().dot(transform.x) < -0.8:
+					rotation_degrees = rotation_degrees + 180.0
+
 	move_and_slide()
