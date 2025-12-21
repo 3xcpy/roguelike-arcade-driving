@@ -3,15 +3,10 @@ class_name Shooter extends Node2D
 @export var num_bullets: int = 2
 var chosen: Array[Node2D] 
 
+
 func _physics_process(delta: float) -> void:
 	shoot()
-	global_rotation = 0.0
-	var l1: Line2D = $Line2D
-	var l2: Line2D = $Line2D2
-	l1.points[0] = position
-	l2.points[0] = position
-	l1.points[1] = chosen[0].global_position - global_position
-	l2.points[1] = chosen[1].global_position - global_position
+
 
 func shoot() -> void:
 	var targets := get_tree().get_nodes_in_group("Enemies")

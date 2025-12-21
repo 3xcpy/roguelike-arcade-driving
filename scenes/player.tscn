@@ -73,11 +73,3 @@ weight = 0.2
 
 [node name="Shooter" type="Node2D" parent="."]
 script = ExtResource("3_qhqgy")
-
-[node name="Line2D" type="Line2D" parent="Shooter"]
-points = PackedVector2Array(0, 0, 12.875, 0)
-width = 1.0
-
-[node name="Line2D2" type="Line2D" parent="Shooter"]
-points = PackedVector2Array(0, 0, 12.875, 0)
-width = 1.0
