@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://celbxoq3s5mxx" path="res://shaders/distortions.gdshader" id="2_kewym"]
 [ext_resource type="Script" uid="uid://d3cvnf1armkbm" path="res://scripts/floor.gd" id="4_6c5u0"]
 [ext_resource type="Material" uid="uid://csxiurfh7gu4o" path="res://materials/floor_colors.tres" id="5_2so7o"]
-[ext_resource type="PackedScene" uid="uid://ce4htckcwoxf" path="res://scenes/distortion_emitter.tscn" id="5_vcsse"]
+[ext_resource type="PackedScene" uid="uid://b4sghwhykpity" path="res://scenes/enemy.tscn" id="7_st0q7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6c5u0"]
 shader = ExtResource("2_kewym")
@@ -45,10 +45,8 @@ position = Vector2(51, 269)
 z_index = -100
 texture_repeat = 2
 material = SubResource("ShaderMaterial_6c5u0")
-offset_left = -94.0
-offset_top = -64.0
-offset_right = 561.0
-offset_bottom = 403.0
+offset_right = 480.0
+offset_bottom = 320.0
 pivot_offset = Vector2(74, 114)
 texture = ExtResource("2_gi7kc")
 expand_mode = 1
@@ -65,33 +63,27 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(200, 26)
 
-[node name="DistortionEmitter" parent="." instance=ExtResource("5_vcsse")]
-position = Vector2(352, 180)
-weight = 0.2
-
-[node name="DistortionEmitter2" parent="." instance=ExtResource("5_vcsse")]
-position = Vector2(234, 262)
-weight = 0.2
-
-[node name="DistortionEmitter3" parent="." instance=ExtResource("5_vcsse")]
-position = Vector2(390, 65)
-weight = 0.2
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2so7o")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["LevelColliders"]]
+[node name="Boundaries" type="StaticBody2D" parent="." groups=["LevelColliders"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries"]
 shape = SubResource("WorldBoundaryShape2D_2so7o")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries"]
 shape = SubResource("WorldBoundaryShape2D_st0q7")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundaries"]
 position = Vector2(480, 320)
 shape = SubResource("WorldBoundaryShape2D_1hwpr")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Boundaries"]
 position = Vector2(480, 320)
 shape = SubResource("WorldBoundaryShape2D_dexii")
+
+[node name="Enemy" parent="." instance=ExtResource("7_st0q7")]
+position = Vector2(252, 73)
+
+[node name="Enemy2" parent="." instance=ExtResource("7_st0q7")]
+position = Vector2(346, 204)

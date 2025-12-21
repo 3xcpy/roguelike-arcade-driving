@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhtn00310jucy"]
+[gd_scene load_steps=11 format=3 uid="uid://dhtn00310jucy"]
 
 [ext_resource type="Script" uid="uid://cldbibnmmw5k4" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://ce4htckcwoxf" path="res://scenes/distortion_emitter.tscn" id="2_g2els"]
+[ext_resource type="Script" uid="uid://dwrhywti44xi5" path="res://scripts/shooter.gd" id="3_qhqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
 size = Vector2(8, 16)
@@ -11,7 +12,7 @@ size = Vector2(8, 16)
 
 [sub_resource type="Curve" id="Curve_qhqgy"]
 _limits = [0.0, 100.0, 0.0, 1.0]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 20.922455), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 30.481285), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_dqkch"]
@@ -62,9 +63,21 @@ texture = SubResource("PlaceholderTexture2D_3vyb7")
 modulate = Color(1.2799708, 1.2799708, 1.2799708, 1)
 z_index = -1
 position = Vector2(-8, 0)
+emitting = false
 amount = 16
-lifetime = 0.25
+lifetime = 0.2
 process_material = SubResource("ParticleProcessMaterial_3vyb7")
 
 [node name="DistortionEmitter" parent="." instance=ExtResource("2_g2els")]
 weight = 0.2
+
+[node name="Shooter" type="Node2D" parent="."]
+script = ExtResource("3_qhqgy")
+
+[node name="Line2D" type="Line2D" parent="Shooter"]
+points = PackedVector2Array(0, 0, 12.875, 0)
+width = 1.0
+
+[node name="Line2D2" type="Line2D" parent="Shooter"]
+points = PackedVector2Array(0, 0, 12.875, 0)
+width = 1.0
