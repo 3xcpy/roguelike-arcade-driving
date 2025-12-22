@@ -79,4 +79,8 @@ amount = 12
 [node name="HealthComponent" parent="." instance=ExtResource("4_qlg0r")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 4096
+limit_bottom = 4096
 position_smoothing_enabled = true
