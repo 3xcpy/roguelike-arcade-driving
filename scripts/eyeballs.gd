@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var eyeball: PackedScene
+@export var damage: float = 1.0
 @export var distance_from_center: float = 24.0
 @export var rotation_speed: float = 30.0
 
@@ -40,4 +41,5 @@ func _on_eyeball_body_entered(body: Node2D) -> void:
 
 
 func _on_eyeball_area_entered(area: Area2D) -> void:
-	print(area)
+	if area.has_method("damage"):
+		area.damage(damage)

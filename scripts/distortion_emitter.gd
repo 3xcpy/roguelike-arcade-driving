@@ -7,4 +7,3 @@ func _physics_process(_delta: float) -> void:
 	var screen_rect := Rect2(Vector2(0.0, 0.0), screen_size)
 	if screen_rect.has_point(screen_pos):
 		Global.floor.add_position(screen_pos)
-		print(screen_pos)
