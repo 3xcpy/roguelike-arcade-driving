@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bntuqd1mxol3w"]
+
+[ext_resource type="Script" uid="uid://tyd51y5dmrjm" path="res://scripts/eyeballs.gd" id="1_5frg0"]
+[ext_resource type="PackedScene" uid="uid://8e8l66upetru" path="res://scenes/eyeball.tscn" id="2_tbk2b"]
+
+[node name="Eyeballs" type="Node2D"]
+script = ExtResource("1_5frg0")
+eyeball = ExtResource("2_tbk2b")
+rotation_speed = 180.0

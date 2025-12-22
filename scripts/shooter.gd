@@ -4,7 +4,7 @@ class_name Shooter extends Node2D
 var chosen: Array[Node2D] 
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	shoot()
 
 
