@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://dv5b0tvp5gwwy"]
+
+[node name="UILayer" type="CanvasLayer"]
+layer = -1

@@ -1,14 +1,22 @@
-[gd_scene load_steps=13 format=3 uid="uid://wb45rm4nabob"]
+[gd_scene load_steps=15 format=3 uid="uid://wb45rm4nabob"]
 
 [ext_resource type="PackedScene" uid="uid://dhtn00310jucy" path="res://scenes/player.tscn" id="1_8rem4"]
 [ext_resource type="Texture2D" uid="uid://phtn83sdcm6r" path="res://sprites/grid.png" id="2_gi7kc"]
-[ext_resource type="Shader" uid="uid://celbxoq3s5mxx" path="res://shaders/distortions.gdshader" id="2_kewym"]
+[ext_resource type="Shader" uid="uid://celbxoq3s5mxx" path="res://shaders/floor.gdshader" id="2_kewym"]
 [ext_resource type="Script" uid="uid://d3cvnf1armkbm" path="res://scripts/floor.gd" id="4_6c5u0"]
-[ext_resource type="Material" uid="uid://csxiurfh7gu4o" path="res://materials/floor_colors.tres" id="5_2so7o"]
+[ext_resource type="PackedScene" uid="uid://512cfge4e2ek" path="res://scenes/background_layer.tscn" id="7_1hwpr"]
 [ext_resource type="PackedScene" uid="uid://b4sghwhykpity" path="res://scenes/enemy.tscn" id="7_st0q7"]
+
+[sub_resource type="Gradient" id="Gradient_2so7o"]
+offsets = PackedFloat32Array(0, 0.6020761)
+colors = PackedColorArray(0, 0.15920904, 0.18987799, 0.8235294, 1, 0.3372549, 0.3529412, 0.89411765)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_st0q7"]
+gradient = SubResource("Gradient_2so7o")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6c5u0"]
 shader = ExtResource("2_kewym")
+shader_parameter/gradient = SubResource("GradientTexture1D_st0q7")
 shader_parameter/positions = PackedVector2Array(400, 300, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/count = 1
 shader_parameter/weight = 0.2
@@ -52,16 +60,6 @@ expand_mode = 1
 stretch_mode = 1
 script = ExtResource("4_6c5u0")
 
-[node name="ColorModifier" type="ColorRect" parent="Floor"]
-material = ExtResource("5_2so7o")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(200, 26)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2so7o")
 
@@ -90,3 +88,5 @@ position = Vector2(252, 73)
 
 [node name="Enemy2" parent="." instance=ExtResource("7_st0q7")]
 position = Vector2(346, 204)
+
+[node name="BackgroundLayer" parent="." instance=ExtResource("7_1hwpr")]

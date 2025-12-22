@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://512cfge4e2ek"]
+
+[ext_resource type="Shader" uid="uid://b0parpvmysipk" path="res://shaders/background.gdshader" id="1_757nl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y0upk"]
+shader = ExtResource("1_757nl")
+shader_parameter/movement_speed = 0.1
+shader_parameter/movement_scale = 2.0
+shader_parameter/color_1 = Color(0, 0.63, 0.49, 1)
+shader_parameter/color_2 = Color(0.16, 0.16, 0.16, 1)
+
+[node name="BackgroundLayer" type="CanvasLayer"]
+layer = -1
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+material = SubResource("ShaderMaterial_y0upk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
