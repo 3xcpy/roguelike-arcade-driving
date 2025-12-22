@@ -74,7 +74,7 @@ process_material = SubResource("ParticleProcessMaterial_3vyb7")
 [node name="Weapons" type="Node2D" parent="."]
 
 [node name="Eyeballs" parent="Weapons" instance=ExtResource("4_dqkch")]
-amount = 3
+amount = 12
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_qlg0r")]
 
