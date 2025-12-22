@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4sghwhykpity"]
+[gd_scene load_steps=5 format=3 uid="uid://b4sghwhykpity"]
 
 [ext_resource type="Texture2D" uid="uid://jxabck5vuije" path="res://icon.svg" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://b6clcrk34j0p6" path="res://scripts/distortion_emitter.gd" id="2_md0e3"]
+[ext_resource type="PackedScene" uid="uid://c2q16yc375m54" path="res://scenes/health_component.tscn" id="3_4ra3w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
 size = Vector2(16, 16)
@@ -18,3 +19,5 @@ shape = SubResource("RectangleShape2D_md0e3")
 [node name="DistortionEmitter" type="Node2D" parent="."]
 script = ExtResource("2_md0e3")
 metadata/_custom_type_script = "uid://b6clcrk34j0p6"
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_4ra3w")]

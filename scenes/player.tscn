@@ -70,7 +70,6 @@ lifetime = 0.2
 process_material = SubResource("ParticleProcessMaterial_3vyb7")
 
 [node name="DistortionEmitter" parent="." instance=ExtResource("2_g2els")]
-weight = 0.2
 
 [node name="Weapons" type="Node2D" parent="."]
 
@@ -78,3 +77,6 @@ weight = 0.2
 amount = 3
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_qlg0r")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
