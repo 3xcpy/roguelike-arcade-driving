@@ -1,9 +1,8 @@
 shader_type canvas_item;
 
-uniform vec2 weight_positions[64];
-uniform float weights[64];
-uniform int weight_count;
-uniform float weight_to_dist;
+uniform vec2 positions[64];
+uniform int count;
+uniform float weight;
 uniform float falloff_distance;
 uniform float falloff_variance;
 
@@ -18,10 +17,10 @@ void fragment() {
 	vec2 scaled_uv = (SCREEN_UV - vec2(0.5, 0.0)) / vec2(ratio, 1.0) + vec2(0.5, 0.0);
 	vec2 offset = vec2(0.0);
 	
-	for(int i = 0; i < weight_count; i++) {
-		vec2 pos_uv = weight_positions[i] / screen_size;
+	for(int i = 0; i < count; i++) {
+		vec2 pos_uv = positions[i] / screen_size;
 		float dist = distance(SCREEN_UV, pos_uv);
-		vec2 disp = normalize(pos_uv - SCREEN_UV) * -weights[i];
+		vec2 disp = normalize(pos_uv - SCREEN_UV) * -weight;
 		float falloff = clamp(1.0 - dist / falloff_distance, 0.0, 1.0) + sin(UV.x + TIME) * falloff_variance;
 		offset += disp * falloff;
 	}

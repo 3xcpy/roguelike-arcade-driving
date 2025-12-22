@@ -1,37 +1,26 @@
 class_name Floor extends TextureRect
 
-var positions := {}
-var weights := {}
+@export var weight: float = 0.2
+
+var positions := []
 var current_index = 0.0
 
 
-func get_valid_index() -> int:
-	current_index += 1
-	if current_index < 64:
-		return current_index - 1
-	else:
-		return -1
-
-
-func set_weight_and_position(index: int, w: float, p: Vector2) -> void:
-	weights[index] = w
-	positions[index] = p
+func add_position(pos: Vector2) -> void:
+	if positions.size() < 64:
+		positions.append(pos)
 
 
 func upload_data() -> void:
-	var w = PackedFloat32Array()
 	var p = PackedVector2Array()
-	var wc = weights.size()
 
-	for pi in positions:
-		p.append(positions[pi])
-	for wi in weights:
-		w.append(weights[wi])
-	
+	for pos in positions:
+		p.append(pos)
 
-	material.set_shader_parameter("weight_positions", p)
-	material.set_shader_parameter("weights", w)
-	material.set_shader_parameter("weight_count", wc)
+	material.set_shader_parameter("positions", p)
+	material.set_shader_parameter("count", positions.size())
+	material.set_shader_parameter("weight", weight)
+	positions.clear()
 
 
 func _init() -> void:
