@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://chd5sgv2bhw3"]
+
+[ext_resource type="Texture2D" uid="uid://jxabck5vuije" path="res://icon.svg" id="1_2eort"]
+[ext_resource type="Script" uid="uid://dows6npxckv7w" path="res://scripts/aura.gd" id="1_bfq42"]
+[ext_resource type="Shader" uid="uid://d21ihhok85yj0" path="res://shaders/circle.gdshader" id="2_j8228"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bfq42"]
+radius = 16.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u8i4k"]
+shader = ExtResource("2_j8228")
+shader_parameter/color = Color(1, 1, 1, 0.4862745)
+
+[node name="Aura" type="Node2D"]
+script = ExtResource("1_bfq42")
+
+[node name="Area2D" type="Area2D" parent="."]
+top_level = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_bfq42")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+z_index = -1
+material = SubResource("ShaderMaterial_u8i4k")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_2eort")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
