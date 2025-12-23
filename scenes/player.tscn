@@ -49,9 +49,9 @@ emission_curve = SubResource("CurveTexture_qhqgy")
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_3vyb7")
-speed = 150.0
+speed = 100.0
 traction = 5.0
-drift_trigger = 0.8
+drift_trigger = 0.85
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5707964
@@ -75,9 +75,10 @@ process_material = SubResource("ParticleProcessMaterial_3vyb7")
 [node name="Weapons" type="Node2D" parent="."]
 
 [node name="Eyeballs" parent="Weapons" instance=ExtResource("4_dqkch")]
-amount = 0
+amount = 6
 
 [node name="Aura" parent="Weapons" instance=ExtResource("4_tuyoq")]
+radius = 0.0
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_qlg0r")]
 

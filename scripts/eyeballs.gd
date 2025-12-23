@@ -2,12 +2,14 @@ extends Node2D
 
 @export var eyeball: PackedScene
 @export var damage: float = 1.0
+var tick: float = 0.1
 @export var distance_from_center: float = 24.0
 @export var rotation_speed: float = 30.0
 
 @export var amount: int = 1
 var eyeballs: Array[Area2D]
 var rot := 0.0
+var timer: float = 0.0
 
 
 func _ready() -> void:
@@ -15,6 +17,16 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	timer += delta
+	if timer >= tick:
+		timer = 0.0
+		for eye in eyeballs:
+			var overlapping_areas := eye.get_overlapping_areas()
+			for a in overlapping_areas:
+				if a.is_in_group("Enemies"):
+					if a.has_method("damage"):
+						a.damage(damage)
+
 	rot += rotation_speed * delta
 	var curr_rot = rot
 	for e in eyeballs:
@@ -32,14 +44,3 @@ func set_amount(val: int) -> void:
 		e.top_level = true
 		eyeballs.append(e)
 		add_child(e)
-		e.connect("body_entered", _on_eyeball_body_entered)
-		e.connect("area_entered", _on_eyeball_area_entered)
-
-
-func _on_eyeball_body_entered(body: Node2D) -> void:
-	print(body)
-
-
-func _on_eyeball_area_entered(area: Area2D) -> void:
-	if area.has_method("damage"):
-		area.damage(damage)
