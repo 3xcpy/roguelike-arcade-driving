@@ -10,7 +10,7 @@ radius = 16.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u8i4k"]
 shader = ExtResource("2_j8228")
 shader_parameter/inside_color = Color(1, 1, 1, 0.52156866)
-shader_parameter/outline_color = Color(1, 1, 1, 0.8039216)
+shader_parameter/outline_color = Color(4.615228, 4.615228, 4.615228, 1)
 shader_parameter/outline_thickness = 0.06
 shader_parameter/wave_size = 0.01
 shader_parameter/wave_frequency = 4.0

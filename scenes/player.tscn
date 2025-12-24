@@ -78,7 +78,6 @@ process_material = SubResource("ParticleProcessMaterial_3vyb7")
 amount = 6
 
 [node name="Aura" parent="Weapons" instance=ExtResource("4_tuyoq")]
-radius = 0.0
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_qlg0r")]
 

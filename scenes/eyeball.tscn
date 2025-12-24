@@ -1,13 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://8e8l66upetru"]
+[gd_scene load_steps=5 format=3 uid="uid://8e8l66upetru"]
 
 [ext_resource type="Texture2D" uid="uid://jxabck5vuije" path="res://icon.svg" id="1_7eecr"]
+[ext_resource type="Shader" uid="uid://d21ihhok85yj0" path="res://shaders/circle.gdshader" id="1_mn6nm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ps2qp"]
+shader = ExtResource("1_mn6nm")
+shader_parameter/inside_color = Color(18.892157, 18.892157, 18.892157, 0.5019608)
+shader_parameter/outline_color = Color(18.892157, 18.892157, 18.892157, 1)
+shader_parameter/outline_thickness = 0.0
+shader_parameter/wave_size = 0.0
+shader_parameter/wave_frequency = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mn6nm"]
-radius = 5.0
+radius = 4.0
 
 [node name="Eyeball" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ps2qp")
 scale = Vector2(0.062, 0.062)
 texture = ExtResource("1_7eecr")
 

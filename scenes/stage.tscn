@@ -26,7 +26,7 @@ shader_parameter/falloff_variance = 0.1
 [sub_resource type="Environment" id="Environment_2so7o"]
 background_mode = 3
 glow_enabled = true
-glow_intensity = 0.1
+glow_intensity = 0.2
 glow_bloom = 0.08
 glow_hdr_threshold = 0.95
 glow_hdr_scale = 0.5
