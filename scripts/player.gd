@@ -15,6 +15,9 @@ extends CharacterBody2D
 @onready var drift_particles: GPUParticles2D = $DriftParticles
 
 
+func damage(dmg: float): $HealthComponent.damage(dmg)
+
+
 func _physics_process(delta: float) -> void:
 	if velocity.length() < speed:
 		velocity += transform.x * accel * delta
@@ -51,3 +54,13 @@ func _physics_process(delta: float) -> void:
 					rotation_degrees = rotation_degrees + 180.0
 
 	move_and_slide()
+
+
+func _on_health_component_damaged(_damage: float) -> void:
+	$DamageParticles.emitting = true
+	$DamageParticles.restart()
+	print("player damaged")
+
+
+func _on_health_component_dead() -> void:
+	print("PLAYER DIED")

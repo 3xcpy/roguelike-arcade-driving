@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhtn00310jucy"]
+[gd_scene load_steps=14 format=3 uid="uid://dhtn00310jucy"]
 
 [ext_resource type="Script" uid="uid://cldbibnmmw5k4" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://ce4htckcwoxf" path="res://scenes/distortion_emitter.tscn" id="2_g2els"]
 [ext_resource type="PackedScene" uid="uid://bntuqd1mxol3w" path="res://scenes/eyeballs.tscn" id="4_dqkch"]
 [ext_resource type="PackedScene" uid="uid://c2q16yc375m54" path="res://scenes/health_component.tscn" id="4_qlg0r"]
 [ext_resource type="PackedScene" uid="uid://chd5sgv2bhw3" path="res://scenes/aura.tscn" id="4_tuyoq"]
+[ext_resource type="PackedScene" uid="uid://bg5rhdxipkhro" path="res://scenes/damage_particles.tscn" id="6_tuyoq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
 size = Vector2(8, 16)
@@ -46,7 +47,7 @@ damping_curve = SubResource("CurveTexture_dqkch")
 attractor_interaction_enabled = false
 emission_curve = SubResource("CurveTexture_qhqgy")
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 1
 script = ExtResource("1_3vyb7")
 speed = 100.0
@@ -56,6 +57,24 @@ drift_trigger = 0.85
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_u8vuu")
+
+[node name="DistortionEmitter" parent="." instance=ExtResource("2_g2els")]
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_qlg0r")]
+
+[node name="Weapons" type="Node2D" parent="."]
+
+[node name="Eyeballs" parent="Weapons" instance=ExtResource("4_dqkch")]
+amount = 6
+
+[node name="Aura" parent="Weapons" instance=ExtResource("4_tuyoq")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 4096
+limit_bottom = 4096
+position_smoothing_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5707964
@@ -70,20 +89,7 @@ amount = 16
 lifetime = 0.2
 process_material = SubResource("ParticleProcessMaterial_3vyb7")
 
-[node name="DistortionEmitter" parent="." instance=ExtResource("2_g2els")]
+[node name="DamageParticles" parent="." instance=ExtResource("6_tuyoq")]
 
-[node name="Weapons" type="Node2D" parent="."]
-
-[node name="Eyeballs" parent="Weapons" instance=ExtResource("4_dqkch")]
-amount = 6
-
-[node name="Aura" parent="Weapons" instance=ExtResource("4_tuyoq")]
-
-[node name="HealthComponent" parent="." instance=ExtResource("4_qlg0r")]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-limit_left = 0
-limit_top = 0
-limit_right = 4096
-limit_bottom = 4096
-position_smoothing_enabled = true
+[connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]
+[connection signal="dead" from="HealthComponent" to="." method="_on_health_component_dead"]

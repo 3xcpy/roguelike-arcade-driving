@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg5rhdxipkhro"]
+
+[ext_resource type="Material" uid="uid://bbeaxjaqfk8ll" path="res://materials/damage_particle_process_material.tres" id="1_vu12a"]
+
+[node name="DamageParticles" type="GPUParticles2D"]
+emitting = false
+amount = 16
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource("1_vu12a")
