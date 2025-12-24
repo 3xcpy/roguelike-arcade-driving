@@ -52,8 +52,8 @@ position = Vector2(51, 269)
 z_index = -100
 texture_repeat = 2
 material = SubResource("ShaderMaterial_6c5u0")
-offset_right = 4096.0
-offset_bottom = 4096.0
+offset_right = 2000.0
+offset_bottom = 1500.0
 pivot_offset = Vector2(74, 114)
 texture = ExtResource("2_gi7kc")
 expand_mode = 1
@@ -72,11 +72,11 @@ shape = SubResource("WorldBoundaryShape2D_2so7o")
 shape = SubResource("WorldBoundaryShape2D_st0q7")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundaries"]
-position = Vector2(4096, 4096)
+position = Vector2(2000, 1500)
 shape = SubResource("WorldBoundaryShape2D_1hwpr")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Boundaries"]
-position = Vector2(4096, 4096)
+position = Vector2(2000, 1500)
 shape = SubResource("WorldBoundaryShape2D_dexii")
 
 [node name="Enemy" parent="." instance=ExtResource("7_st0q7")]
@@ -84,5 +84,8 @@ position = Vector2(252, 73)
 
 [node name="Enemy2" parent="." instance=ExtResource("7_st0q7")]
 position = Vector2(346, 204)
+
+[node name="Enemy3" parent="." instance=ExtResource("7_st0q7")]
+position = Vector2(230, 342)
 
 [node name="BackgroundLayer" parent="." instance=ExtResource("7_1hwpr")]
