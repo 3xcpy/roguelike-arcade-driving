@@ -1,8 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dv5b0tvp5gwwy"]
-
-[ext_resource type="PackedScene" uid="uid://ooieugeebd34" path="res://scenes/pause_menu.tscn" id="1_w83ab"]
+[gd_scene format=3 uid="uid://dv5b0tvp5gwwy"]
 
 [node name="UILayer" type="CanvasLayer"]
 layer = -1
-
-[node name="PauseMenu" parent="." instance=ExtResource("1_w83ab")]
