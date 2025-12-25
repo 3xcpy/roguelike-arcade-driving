@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjdgthw5tihnc"]
+
+[ext_resource type="Script" uid="uid://cxyi4hky6fkic" path="res://scripts/ui_animator.gd" id="1_cwdqs"]
+
+[node name="UIAnimator" type="Node"]
+process_mode = 3
+script = ExtResource("1_cwdqs")
+hover_scale = Vector2(1.1, 1.1)
