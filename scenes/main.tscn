@@ -13,7 +13,8 @@ stage_scene = ExtResource("2_sugp2")
 pause_menu_scene = ExtResource("3_jyhfs")
 main_menu_scene = ExtResource("4_tbgi4")
 
+[node name="UIAnimator" parent="." instance=ExtResource("6_tefeu")]
+hover_rotation = 2.0
+
 [node name="UILayer" parent="." instance=ExtResource("1_0wfyh")]
 layer = 100
-
-[node name="UIAnimator" parent="." instance=ExtResource("6_tefeu")]
