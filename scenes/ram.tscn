@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cocw5gtoa0qee"]
+
+[ext_resource type="Texture2D" uid="uid://jxabck5vuije" path="res://icon.svg" id="1_1q3w3"]
+[ext_resource type="Script" uid="uid://ccxhvofnhpp4g" path="res://scripts/ram.gd" id="1_ae536"]
+[ext_resource type="Shader" uid="uid://c8jbthupyjnvd" path="res://shaders/ram.gdshader" id="1_e104g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e104g"]
+size = Vector2(16, 32)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ae536"]
+shader = ExtResource("1_e104g")
+shader_parameter/color = Color(1, 1, 1, 0.47843137)
+shader_parameter/edge_color = Color(18.892157, 18.892157, 18.892157, 1)
+shader_parameter/edge_thickness = 0.1
+
+[node name="Ram" type="Area2D"]
+script = ExtResource("1_ae536")
+radius = 16.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 0)
+shape = SubResource("RectangleShape2D_e104g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ae536")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_1q3w3")

@@ -1,19 +1,32 @@
-extends Node2D
+@tool
+class_name Eyeballs extends Node2D
 
-@export var eyeball: PackedScene
+@export var eyeball: PackedScene:
+	set(e):
+		eyeball = e
+		if Engine.is_editor_hint():
+			set_amount()
 @export var damage: float = 1.0
 var tick: float = 0.1
-@export var distance_from_center: float = 24.0
+@export var distance_from_center: float = 24.0:
+	set(d):
+		distance_from_center = d
+		if Engine.is_editor_hint():
+			set_amount()
 @export var rotation_speed: float = 30.0
 
-@export var amount: int = 1
+@export var amount: int = 1:
+	set(a):
+		amount = a
+		if Engine.is_editor_hint():
+			set_amount()
 var eyeballs: Array[Area2D]
 var rot := 0.0
 var timer: float = 0.0
 
 
 func _ready() -> void:
-	set_amount(amount)
+	set_amount()
 
 
 func _physics_process(delta: float) -> void:
@@ -34,12 +47,12 @@ func _physics_process(delta: float) -> void:
 		curr_rot += 360.0/eyeballs.size()
 
 
-func set_amount(val: int) -> void:
+func set_amount() -> void:
 	for eye in eyeballs:
 		eye.queue_free()
 	eyeballs.clear()
 	
-	for i in val:
+	for i in amount:
 		var e: Area2D = eyeball.instantiate()
 		e.top_level = true
 		eyeballs.append(e)

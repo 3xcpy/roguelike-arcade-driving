@@ -1,8 +1,13 @@
-extends Node2D
+@tool
+class_name Aura extends Node2D
 
 var damage: float = 1.0
 var tick: float = 0.1
-@export var radius: float = 16.0
+@export var radius: float = 16.0:
+	set(new_radius):
+		radius = new_radius
+		if Engine.is_editor_hint():
+			update_values()
 
 var timer: float = 0.0
 
@@ -10,7 +15,7 @@ var timer: float = 0.0
 
 
 func _ready() -> void:
-	set_radius(radius)
+	update_values()
 
 
 func _physics_process(delta: float) -> void:
@@ -26,6 +31,7 @@ func _physics_process(delta: float) -> void:
 	area.global_position = global_position # get_overlapping_bodies is only updated after physics_process, so this is staggered over the frames (i think)
 	
 
-func set_radius(rad: float) -> void:
-	$Area2D/CollisionShape2D.shape.radius = rad
-	$Area2D/Sprite2D.scale = Vector2(rad*2.0/128.0, rad*2.0/128.0);
+# adjust scale and collision for a new radius
+func update_values() -> void:
+	$Area2D/CollisionShape2D.shape.radius = radius
+	$Area2D/Sprite2D.scale = Vector2(radius*2.0/128.0, radius*2.0/128.0);

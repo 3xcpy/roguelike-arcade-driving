@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dryo3jw4wx637"]
+
+[ext_resource type="Shader" uid="uid://dh3womtjo1wd2" path="res://shaders/slash.gdshader" id="1_3c2nd"]
+[ext_resource type="Texture2D" uid="uid://jxabck5vuije" path="res://icon.svg" id="2_fg1j7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e2dr4"]
+shader = ExtResource("1_3c2nd")
+shader_parameter/slash_start = -0.9
+shader_parameter/slash_length = 0.0
+shader_parameter/color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[node name="Slash" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_e2dr4")
+texture = ExtResource("2_fg1j7")
