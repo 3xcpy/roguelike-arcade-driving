@@ -7,8 +7,8 @@ class_name Rame extends Area2D
 		if Engine.is_editor_hint():
 			update_values()
 
-var tick: float = 0.1
 @export var damage: float = 1.0
+var tick: float = 0.1
 var timer: float = 0.0
 
 

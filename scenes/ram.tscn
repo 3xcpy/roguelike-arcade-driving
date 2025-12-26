@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://c8jbthupyjnvd" path="res://shaders/ram.gdshader" id="1_e104g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e104g"]
-size = Vector2(16, 32)
+size = Vector2(32, 64)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ae536"]
 shader = ExtResource("1_e104g")
