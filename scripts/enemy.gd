@@ -7,6 +7,7 @@ var timer := 0.0
 
 
 func _physics_process(delta: float) -> void:
+	# attacking
 	timer += delta
 	if timer >= tick:
 		timer = 0.0

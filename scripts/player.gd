@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @export var speed: float = 200.0
 @export var accel: float = 100.0
@@ -13,6 +13,10 @@ extends CharacterBody2D
 @export var wheel_base: float = 16.0 # distance between the front and back wheel
 
 @onready var drift_particles: GPUParticles2D = $DriftParticles
+
+@onready var eyeballs: Eyeballs = $Weapons/Eyeballs
+@onready var aura: Aura = $Weapons/Aura
+@onready var ram: Ram = $Weapons/Ram
 
 
 func damage(dmg: float): $HealthComponent.damage(dmg)

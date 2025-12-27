@@ -1,5 +1,4 @@
-@tool
-class_name Rame extends Area2D
+@tool class_name Ram extends Area2D
 
 @export var radius: float = 8.0:
 	set(new_radius):
