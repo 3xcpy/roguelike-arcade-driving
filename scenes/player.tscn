@@ -72,7 +72,6 @@ amount = 6
 
 [node name="Ram" parent="Weapons" instance=ExtResource("6_fjrip")]
 position = Vector2(8, 0)
-radius = 32.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
