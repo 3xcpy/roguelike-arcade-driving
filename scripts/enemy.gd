@@ -1,6 +1,7 @@
 class_name Enemy extends Area2D
 
 @export var attack_damage: float = 1.0
+@export var value: int = 1
 
 var tick: float = 0.1
 var timer := 0.0
@@ -22,6 +23,7 @@ func damage(dmg: float): $HealthComponent.damage(dmg)
 
 
 func _on_health_component_dead() -> void:
+	Global.game_manager.add_score(value)
 	queue_free()
 
 
