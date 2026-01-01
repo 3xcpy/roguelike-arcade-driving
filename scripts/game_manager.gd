@@ -5,6 +5,8 @@ var level: int = 0
 var score_to_level: int = 0
 @export var scalar: float = 1.05
 
+@export var upgrades: Array[Upgrade] = []
+
 
 func _ready() -> void:
 	Global.game_manager = self

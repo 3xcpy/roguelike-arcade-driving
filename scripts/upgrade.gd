@@ -1,3 +1,4 @@
-@abstract class_name Upgrade extends Resource
+class_name Upgrade extends Resource
 
-@abstract func apply(player: Player)
+func apply(player: Player):
+	pass

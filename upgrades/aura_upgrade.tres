@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="AuraUpgrade" load_steps=2 format=3 uid="uid://bds1dkbfyg3nf"]
+
+[ext_resource type="Script" uid="uid://knlr2h7xvtpj" path="res://scripts/upgrades/aura_upgrade.gd" id="1_d4w88"]
+
+[resource]
+script = ExtResource("1_d4w88")

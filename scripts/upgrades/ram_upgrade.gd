@@ -1,4 +1,4 @@
-extends Upgrade
+class_name RamUpgrade extends Upgrade
 
 func apply(player: Player):
 	player.ram.radius += 16

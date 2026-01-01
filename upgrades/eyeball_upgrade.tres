@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="EyeballUpgrade" load_steps=2 format=3 uid="uid://cqqnrf1ssqhvw"]
+
+[ext_resource type="Script" uid="uid://mep4ovyjerpx" path="res://scripts/upgrades/eyeball_upgrade.gd" id="1_sxlpf"]
+
+[resource]
+script = ExtResource("1_sxlpf")

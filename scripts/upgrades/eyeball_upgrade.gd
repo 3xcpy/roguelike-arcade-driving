@@ -1,4 +1,4 @@
-extends Upgrade
+class_name EyeballUpgrade extends Upgrade
 
 func apply(player: Player):
 	player.eyeballs.amount += 1

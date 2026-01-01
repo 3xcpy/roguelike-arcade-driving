@@ -64,6 +64,7 @@ func navigate() -> void:
 func update_values() -> void:
 	scale = Vector2(level, level)
 	attack_damage = level
+	value = level
 
 
 func damage(dmg: float): $HealthComponent.damage(dmg)
