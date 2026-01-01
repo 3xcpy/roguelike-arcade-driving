@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://wb45rm4nabob"]
+[gd_scene load_steps=17 format=3 uid="uid://wb45rm4nabob"]
 
 [ext_resource type="PackedScene" uid="uid://dhtn00310jucy" path="res://scenes/player.tscn" id="1_8rem4"]
+[ext_resource type="Script" uid="uid://cjhq168l74jfy" path="res://scripts/game_manager.gd" id="1_st0q7"]
 [ext_resource type="Texture2D" uid="uid://phtn83sdcm6r" path="res://sprites/grid.png" id="2_gi7kc"]
 [ext_resource type="Shader" uid="uid://celbxoq3s5mxx" path="res://shaders/floor.gdshader" id="2_kewym"]
 [ext_resource type="Script" uid="uid://d3cvnf1armkbm" path="res://scripts/floor.gd" id="4_6c5u0"]
@@ -43,7 +44,13 @@ normal = Vector2(1, 0)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dexii"]
 normal = Vector2(-1, 0)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_st0q7"]
+vertices = PackedVector2Array(1982.1016, 15.953125, 1997.8906, 1494, 8.9765625, 1494, 6.0234375, 6.046875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1992, 6, 2008, 1504, -1, 1504, -4, -4)])
+
 [node name="Stage" type="Node2D"]
+script = ExtResource("1_st0q7")
 
 [node name="Player" parent="." instance=ExtResource("1_8rem4")]
 position = Vector2(51, 269)
@@ -89,3 +96,6 @@ position = Vector2(346, 204)
 position = Vector2(230, 342)
 
 [node name="BackgroundLayer" parent="." instance=ExtResource("7_1hwpr")]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_st0q7")

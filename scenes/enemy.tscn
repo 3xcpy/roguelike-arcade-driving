@@ -20,6 +20,7 @@ radius = 8.0
 
 [node name="Enemy" type="Area2D" groups=["Enemies"]]
 script = ExtResource("1_5uy6h")
+level = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_xwavj")
@@ -37,5 +38,9 @@ metadata/_custom_type_script = "uid://b6clcrk34j0p6"
 
 [node name="DamageParticles" parent="." instance=ExtResource("6_xwavj")]
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+
 [connection signal="damaged" from="HealthComponent" to="." method="_on_health_component_damaged"]
 [connection signal="dead" from="HealthComponent" to="." method="_on_health_component_dead"]
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
