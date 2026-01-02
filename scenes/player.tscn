@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhtn00310jucy"]
+[gd_scene load_steps=16 format=3 uid="uid://dhtn00310jucy"]
 
 [ext_resource type="Script" uid="uid://cldbibnmmw5k4" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://ce4htckcwoxf" path="res://scenes/distortion_emitter.tscn" id="2_g2els"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://chd5sgv2bhw3" path="res://scenes/aura.tscn" id="4_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://cocw5gtoa0qee" path="res://scenes/ram.tscn" id="6_fjrip"]
 [ext_resource type="PackedScene" uid="uid://bg5rhdxipkhro" path="res://scenes/damage_particles.tscn" id="6_tuyoq"]
+[ext_resource type="PackedScene" uid="uid://bs5aym1iwjsq" path="res://scenes/laser_emitter.tscn" id="7_smehm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
 size = Vector2(8, 16)
@@ -72,6 +73,8 @@ amount = 6
 
 [node name="Ram" parent="Weapons" instance=ExtResource("6_fjrip")]
 position = Vector2(8, 0)
+
+[node name="LaserEmitter" parent="Weapons" instance=ExtResource("7_smehm")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs5aym1iwjsq"]
+
+[ext_resource type="Script" uid="uid://4suw3x7pgl1f" path="res://scripts/laser_emitter.gd" id="1_fd745"]
+[ext_resource type="PackedScene" uid="uid://bdd8prd12fv3q" path="res://scenes/laser.tscn" id="2_fmkpm"]
+
+[node name="LaserEmitter" type="Node2D"]
+script = ExtResource("1_fd745")
+active = true
+laser = ExtResource("2_fmkpm")

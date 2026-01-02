@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdd8prd12fv3q"]
+
+[ext_resource type="Script" uid="uid://bjfw80x34pjhb" path="res://scripts/laser.gd" id="1_xmihv"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5no5p"]
+b = Vector2(10.48, 0)
+
+[node name="Laser" type="Area2D"]
+top_level = true
+script = ExtResource("1_xmihv")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0.06, 0, 7.375, 0)
+width = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_5no5p")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
