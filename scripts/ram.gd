@@ -1,10 +1,6 @@
-@tool class_name Ram extends Area2D
+class_name Ram extends Area2D
 
-@export var radius: float = 8.0:
-	set(new_radius):
-		radius = new_radius
-		if Engine.is_editor_hint():
-			update_values()
+@export var radius: float = 8.0
 
 @export var damage: float = 1.0
 var tick: float = 0.1

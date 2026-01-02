@@ -17,7 +17,7 @@ width = 2.0
 shape = SubResource("SegmentShape2D_5no5p")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.3
 one_shot = true
 autostart = true
 
