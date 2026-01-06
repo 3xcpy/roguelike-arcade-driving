@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://duvjiydrgku8d"]
+[gd_scene load_steps=3 format=3 uid="uid://duvjiydrgku8d"]
 
 [ext_resource type="Texture2D" uid="uid://jxabck5vuije" path="res://icon.svg" id="1_8pp2m"]
+[ext_resource type="Script" uid="uid://dpq3l3p2ly0f3" path="res://scenes/upgrade_select_screen.gd" id="1_wreeg"]
 
 [node name="UpgradeSelectScreen" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wreeg")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -38,12 +40,18 @@ layout_mode = 2
 texture = ExtResource("1_8pp2m")
 stretch_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 11
-text = "Multiplies the aura radius by 2 and has many other interesting properties blablabla I need some text lorem ipsum blublub"
-autowrap_mode = 3
+theme_override_font_sizes/normal_font_size = 13
+theme_override_font_sizes/bold_font_size = 13
+theme_override_font_sizes/bold_italics_font_size = 13
+theme_override_font_sizes/italics_font_size = 13
+theme_override_font_sizes/mono_font_size = 13
+bbcode_enabled = true
+text = "Multiplies the [b]aura[/b] radius by 2 and has many other interesting properties blablabla I need some text lorem ipsum blublub"
+fit_content = true
+scroll_following_visible_characters = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -54,6 +62,19 @@ layout_mode = 2
 texture = ExtResource("1_8pp2m")
 stretch_mode = 2
 
+[node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 13
+theme_override_font_sizes/bold_font_size = 13
+theme_override_font_sizes/bold_italics_font_size = 13
+theme_override_font_sizes/italics_font_size = 13
+theme_override_font_sizes/mono_font_size = 13
+bbcode_enabled = true
+text = "Multiplies the [b]aura[/b] radius by 2 and has many other interesting properties blablabla I need some text lorem ipsum blublub"
+fit_content = true
+scroll_following_visible_characters = true
+
 [node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 
@@ -62,3 +83,16 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture = ExtResource("1_8pp2m")
 stretch_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 13
+theme_override_font_sizes/bold_font_size = 13
+theme_override_font_sizes/bold_italics_font_size = 13
+theme_override_font_sizes/italics_font_size = 13
+theme_override_font_sizes/mono_font_size = 13
+bbcode_enabled = true
+text = "Multiplies the [b]aura[/b] radius by 2 and has many other interesting properties blablabla I need some text lorem ipsum blublub"
+fit_content = true
+scroll_following_visible_characters = true
