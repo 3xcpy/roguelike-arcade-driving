@@ -1,9 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://duvjiydrgku8d"]
 
 [ext_resource type="Texture2D" uid="uid://jxabck5vuije" path="res://icon.svg" id="1_8pp2m"]
-[ext_resource type="Script" uid="uid://dpq3l3p2ly0f3" path="res://scenes/upgrade_select_screen.gd" id="1_wreeg"]
+[ext_resource type="Script" uid="uid://dpq3l3p2ly0f3" path="res://scripts/upgrade_select_screen.gd" id="1_wreeg"]
 
 [node name="UpgradeSelectScreen" type="Control"]
+process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +13,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wreeg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.36078432, 0.36078432, 0.36078432, 0.4509804)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -31,16 +42,22 @@ theme_override_constants/margin_bottom = 0
 layout_mode = 2
 theme_override_constants/separation = 64
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 256)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TextureButton"]
+layout_mode = 1
+offset_right = 128.0
+offset_bottom = 276.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/TextureButton/VBoxContainer"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture = ExtResource("1_8pp2m")
 stretch_mode = 2
 
-[node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="DescriptionLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/TextureButton/VBoxContainer"]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 13
@@ -53,16 +70,22 @@ text = "Multiplies the [b]aura[/b] radius by 2 and has many other interesting pr
 fit_content = true
 scroll_following_visible_characters = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="TextureButton2" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 256)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TextureButton2"]
+layout_mode = 1
+offset_right = 128.0
+offset_bottom = 276.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/TextureButton2/VBoxContainer"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture = ExtResource("1_8pp2m")
 stretch_mode = 2
 
-[node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="DescriptionLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/TextureButton2/VBoxContainer"]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 13
@@ -75,16 +98,22 @@ text = "Multiplies the [b]aura[/b] radius by 2 and has many other interesting pr
 fit_content = true
 scroll_following_visible_characters = true
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="TextureButton3" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 256)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TextureButton3"]
+layout_mode = 1
+offset_right = 128.0
+offset_bottom = 276.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/TextureButton3/VBoxContainer"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture = ExtResource("1_8pp2m")
 stretch_mode = 2
 
-[node name="Label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+[node name="DescriptionLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/TextureButton3/VBoxContainer"]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 13
@@ -96,3 +125,7 @@ bbcode_enabled = true
 text = "Multiplies the [b]aura[/b] radius by 2 and has many other interesting properties blablabla I need some text lorem ipsum blublub"
 fit_content = true
 scroll_following_visible_characters = true
+
+[connection signal="button_up" from="MarginContainer/HBoxContainer/TextureButton" to="." method="_on_texture_button_button_up"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/TextureButton2" to="." method="_on_texture_button_2_button_up"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/TextureButton3" to="." method="_on_texture_button_3_button_up"]

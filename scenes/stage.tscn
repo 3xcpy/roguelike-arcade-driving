@@ -1,9 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://wb45rm4nabob"]
+[gd_scene load_steps=19 format=3 uid="uid://wb45rm4nabob"]
 
 [ext_resource type="PackedScene" uid="uid://dhtn00310jucy" path="res://scenes/player.tscn" id="1_8rem4"]
 [ext_resource type="Script" uid="uid://cjhq168l74jfy" path="res://scripts/game_manager.gd" id="1_st0q7"]
+[ext_resource type="Script" uid="uid://dhk18celqtlog" path="res://scripts/upgrade.gd" id="2_dexii"]
 [ext_resource type="Texture2D" uid="uid://phtn83sdcm6r" path="res://sprites/grid.png" id="2_gi7kc"]
 [ext_resource type="Shader" uid="uid://celbxoq3s5mxx" path="res://shaders/floor.gdshader" id="2_kewym"]
+[ext_resource type="Resource" uid="uid://c16n82jmmfbfn" path="res://upgrades/test.tres" id="3_dexii"]
 [ext_resource type="Script" uid="uid://d3cvnf1armkbm" path="res://scripts/floor.gd" id="4_6c5u0"]
 [ext_resource type="PackedScene" uid="uid://512cfge4e2ek" path="res://scenes/background_layer.tscn" id="7_1hwpr"]
 [ext_resource type="PackedScene" uid="uid://b4sghwhykpity" path="res://scenes/enemy.tscn" id="7_st0q7"]
@@ -51,6 +53,8 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(1992, 6, 2008, 1504, -1
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_st0q7")
+initial_score_to_level = 1
+upgrades = Array[ExtResource("2_dexii")]([ExtResource("3_dexii")])
 
 [node name="Player" parent="." instance=ExtResource("1_8rem4")]
 position = Vector2(51, 269)
@@ -93,6 +97,15 @@ position = Vector2(252, 73)
 position = Vector2(346, 204)
 
 [node name="Enemy3" parent="." instance=ExtResource("7_st0q7")]
+position = Vector2(230, 342)
+
+[node name="Enemy4" parent="." instance=ExtResource("7_st0q7")]
+position = Vector2(252, 73)
+
+[node name="Enemy5" parent="." instance=ExtResource("7_st0q7")]
+position = Vector2(346, 204)
+
+[node name="Enemy6" parent="." instance=ExtResource("7_st0q7")]
 position = Vector2(230, 342)
 
 [node name="BackgroundLayer" parent="." instance=ExtResource("7_1hwpr")]

@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+UiAnimator="*res://scenes/ui_animator.tscn"
 Global="*res://scripts/global.gd"
 
 [display]

@@ -5,16 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://wb45rm4nabob" path="res://scenes/stage.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://ooieugeebd34" path="res://scenes/pause_menu.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://3hpv3lut38d3" path="res://scenes/main_menu.tscn" id="4_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://bjdgthw5tihnc" path="res://scenes/ui_animator.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://duvjiydrgku8d" path="res://scenes/upgrade_select_screen.tscn" id="5_tefeu"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_sugp2")
 stage_scene = ExtResource("2_sugp2")
 pause_menu_scene = ExtResource("3_jyhfs")
 main_menu_scene = ExtResource("4_tbgi4")
-
-[node name="UIAnimator" parent="." instance=ExtResource("6_tefeu")]
-hover_rotation = 2.0
+upgrade_select_screen_scene = ExtResource("5_tefeu")
 
 [node name="UILayer" parent="." instance=ExtResource("1_0wfyh")]
 layer = 100

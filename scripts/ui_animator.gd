@@ -8,11 +8,12 @@ class_name UIAnimator extends Node
 
 
 func _ready() -> void:
+	print("ui animator ready")
 	get_tree().connect("node_added", _on_tree_node_added)
 
 
 func _on_tree_node_added(node: Node) -> void:
-	if node is Button:
+	if node is BaseButton:
 		add_target(node)
 
 
@@ -31,6 +32,7 @@ func off_hover(target: Control) -> void:
 
 
 func add_target(target: Control) -> void:
+	print(target)
 	var a = func(): on_hover(target)
 	target.mouse_entered.connect(a)
 	var b = func(): off_hover(target)

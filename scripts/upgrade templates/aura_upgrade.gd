@@ -8,9 +8,9 @@ class_name AuraUpgrade extends Upgrade
 
 func apply(player: Player):
 	if radius > 0.0:
-		player.aura.radius += damage
+		player.aura.radius += radius
 	if radius_multiplier > 0.0:
-		player.aura.radius = player.aura.damage * damage_multiplier
+		player.aura.radius = player.aura.radius * radius_multiplier
 	if damage > 0.0:
 		player.aura.damage += damage
 	if damage_multiplier > 0.0:

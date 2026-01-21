@@ -22,4 +22,7 @@ func levelup(overshoot: int) -> void:
 	level += 1
 	score_to_level = (int)(initial_score_to_level * pow(scalar, level))
 	score_to_level -= overshoot
-	# TODO: upgrades
+	var u1 = upgrades[randi() % upgrades.size()]
+	var u2 = upgrades[randi() % upgrades.size()]
+	var u3 = upgrades[randi() % upgrades.size()]
+	Global.upgrade_select_screen.set_slots(u1, u2, u3)
