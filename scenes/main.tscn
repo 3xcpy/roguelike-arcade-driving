@@ -1,15 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi1kkpplws8fv"]
+[gd_scene load_steps=8 format=3 uid="uid://bi1kkpplws8fv"]
 
 [ext_resource type="PackedScene" uid="uid://dv5b0tvp5gwwy" path="res://scenes/ui_layer.tscn" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://1d7jr7tjq7f4" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://wb45rm4nabob" path="res://scenes/stage.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://ooieugeebd34" path="res://scenes/pause_menu.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://btgj36pohx8ym" path="res://scenes/hud.tscn" id="3_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://3hpv3lut38d3" path="res://scenes/main_menu.tscn" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://duvjiydrgku8d" path="res://scenes/upgrade_select_screen.tscn" id="5_tefeu"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_sugp2")
 stage_scene = ExtResource("2_sugp2")
+hud_scene = ExtResource("3_o6xl0")
 pause_menu_scene = ExtResource("3_jyhfs")
 main_menu_scene = ExtResource("4_tbgi4")
 upgrade_select_screen_scene = ExtResource("5_tefeu")

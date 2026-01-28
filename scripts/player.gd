@@ -18,8 +18,14 @@ class_name Player extends CharacterBody2D
 @onready var aura: Aura = $Weapons/Aura
 @onready var ram: Ram = $Weapons/Ram
 
+@onready var health_component: HealthComponent = $HealthComponent
 
-func damage(dmg: float): $HealthComponent.damage(dmg)
+
+func damage(dmg: float): health_component.damage(dmg)
+
+
+func _ready() -> void:
+	Global.player = self
 
 
 func _physics_process(delta: float) -> void:
