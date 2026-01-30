@@ -76,6 +76,7 @@ position = Vector2(8, 0)
 damage = 2.0
 
 [node name="LaserEmitter" parent="Weapons" instance=ExtResource("7_smehm")]
+lasers_per_second = 1
 damage = 2.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
