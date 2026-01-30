@@ -20,7 +20,7 @@ radius = 8.0
 
 [node name="Enemy" type="Area2D" groups=["Enemies"]]
 script = ExtResource("1_5uy6h")
-level = 2
+level = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_xwavj")
@@ -35,6 +35,7 @@ script = ExtResource("2_md0e3")
 metadata/_custom_type_script = "uid://b6clcrk34j0p6"
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_4ra3w")]
+max_health = 5.0
 
 [node name="DamageParticles" parent="." instance=ExtResource("6_xwavj")]
 

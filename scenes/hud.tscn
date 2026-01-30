@@ -48,5 +48,6 @@ layout_mode = 2
 size_flags_horizontal = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_ahhtf")
 theme_override_styles/fill = SubResource("StyleBoxFlat_oo0fn")
-value = 100.0
+value = 2.99
+fill_mode = 1
 show_percentage = false

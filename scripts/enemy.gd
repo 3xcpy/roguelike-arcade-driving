@@ -25,6 +25,7 @@ var velocity: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	index = Global.get_enemy_index()
+	update_values()
 
 
 func _physics_process(delta: float) -> void:
@@ -65,6 +66,8 @@ func update_values() -> void:
 	scale = Vector2(level, level)
 	attack_damage = level
 	value = level
+	$HealthComponent.max_health = $HealthComponent.max_health * level
+	$HealthComponent.health = $HealthComponent.max_health
 
 
 func damage(dmg: float): $HealthComponent.damage(dmg)
