@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AuraUpgrade" load_steps=3 format=3 uid="uid://bkrhmbdxhtt4c"]
 
 [ext_resource type="Script" uid="uid://knlr2h7xvtpj" path="res://scripts/upgrade templates/aura_upgrade.gd" id="1_5w7ul"]
-[ext_resource type="Texture2D" uid="uid://jxabck5vuije" path="res://icon.svg" id="1_6kcxh"]
+[ext_resource type="Texture2D" uid="uid://bf7iog2w4a0eo" path="res://sprites/aura-icon.png" id="1_6kcxh"]
 
 [resource]
 script = ExtResource("1_5w7ul")

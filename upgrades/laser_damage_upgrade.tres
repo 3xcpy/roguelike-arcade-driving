@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LaserUpgradeTemplate" load_steps=3 format=3 uid="uid://bnal0nklmynrc"]
+
+[ext_resource type="Script" uid="uid://cw6tfddef54u" path="res://scripts/upgrade templates/laser_upgrade_template.gd" id="1_f2xm5"]
+[ext_resource type="Texture2D" uid="uid://daauovwx2l4fk" path="res://sprites/laser-icon.png" id="1_kvcsy"]
+
+[resource]
+script = ExtResource("1_f2xm5")
+damage = 1
+icon = ExtResource("1_kvcsy")
+description = "Increase the laser damage"
+metadata/_custom_type_script = "uid://cw6tfddef54u"

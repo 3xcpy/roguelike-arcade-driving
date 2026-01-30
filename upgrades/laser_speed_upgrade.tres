@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="LaserUpgradeTemplate" load_steps=3 format=3 uid="uid://bp33modg0ejn8"]
 
 [ext_resource type="Script" uid="uid://cw6tfddef54u" path="res://scripts/upgrade templates/laser_upgrade_template.gd" id="1_dxb76"]
-[ext_resource type="Texture2D" uid="uid://jxabck5vuije" path="res://icon.svg" id="1_j1oeh"]
+[ext_resource type="Texture2D" uid="uid://daauovwx2l4fk" path="res://sprites/laser-icon.png" id="1_j1oeh"]
 
 [resource]
 script = ExtResource("1_dxb76")
