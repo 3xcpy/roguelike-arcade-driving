@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LaserUpgradeTemplate" load_steps=3 format=3 uid="uid://bp33modg0ejn8"]
+
+[ext_resource type="Script" uid="uid://cw6tfddef54u" path="res://scripts/upgrade templates/laser_upgrade_template.gd" id="1_dxb76"]
+[ext_resource type="Texture2D" uid="uid://jxabck5vuije" path="res://icon.svg" id="1_j1oeh"]
+
+[resource]
+script = ExtResource("1_dxb76")
+lasers_per_second = 1
+icon = ExtResource("1_j1oeh")
+description = "Shoot one more laser per second"
+metadata/_custom_type_script = "uid://cw6tfddef54u"

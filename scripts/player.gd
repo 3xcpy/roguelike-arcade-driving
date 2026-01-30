@@ -17,6 +17,7 @@ class_name Player extends CharacterBody2D
 @onready var eyeballs: Eyeballs = $Weapons/Eyeballs
 @onready var aura: Aura = $Weapons/Aura
 @onready var ram: Ram = $Weapons/Ram
+@onready var laser_emitter: LaserEmitter = $Weapons/LaserEmitter
 
 @onready var health_component: HealthComponent = $HealthComponent
 

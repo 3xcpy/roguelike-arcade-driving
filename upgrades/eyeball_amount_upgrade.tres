@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EyeballUpgrade" load_steps=3 format=3 uid="uid://ky42qs44pnrk"]
+
+[ext_resource type="Script" uid="uid://mep4ovyjerpx" path="res://scripts/upgrade templates/eyeball_upgrade.gd" id="1_b11hm"]
+[ext_resource type="Texture2D" uid="uid://bockus2fcd6ac" path="res://sprites/eyeballs-icon.png" id="1_utry2"]
+
+[resource]
+script = ExtResource("1_b11hm")
+amount = 1
+icon = ExtResource("1_utry2")
+description = "Add one more orb around you"
+metadata/_custom_type_script = "uid://mep4ovyjerpx"

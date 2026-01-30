@@ -67,7 +67,7 @@ shape = SubResource("RectangleShape2D_u8vuu")
 [node name="Weapons" type="Node2D" parent="."]
 
 [node name="Eyeballs" parent="Weapons" instance=ExtResource("4_dqkch")]
-amount = 6
+distance_from_center = 64.0
 
 [node name="Aura" parent="Weapons" instance=ExtResource("4_tuyoq")]
 
