@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RamUpgrade" load_steps=3 format=3 uid="uid://xajplhq2wu5y"]
+
+[ext_resource type="Texture2D" uid="uid://c00gyfbawlw8p" path="res://sprites/ram-icon.png" id="1_23o3t"]
+[ext_resource type="Script" uid="uid://drmw3s644dh3g" path="res://scripts/upgrade templates/ram_upgrade.gd" id="1_mhgwr"]
+
+[resource]
+script = ExtResource("1_mhgwr")
+damage = 1.0
+icon = ExtResource("1_23o3t")
+description = "The frontal damage area deals more damage"
+metadata/_custom_type_script = "uid://drmw3s644dh3g"

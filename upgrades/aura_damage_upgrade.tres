@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AuraUpgrade" load_steps=3 format=3 uid="uid://c052nidrmsnuo"]
+
+[ext_resource type="Script" uid="uid://knlr2h7xvtpj" path="res://scripts/upgrade templates/aura_upgrade.gd" id="1_78kvb"]
+[ext_resource type="Texture2D" uid="uid://bf7iog2w4a0eo" path="res://sprites/aura-icon.png" id="1_nmgrw"]
+
+[resource]
+script = ExtResource("1_78kvb")
+damage = 1.0
+icon = ExtResource("1_nmgrw")
+description = "The aura around you deals more damage"
+metadata/_custom_type_script = "uid://knlr2h7xvtpj"

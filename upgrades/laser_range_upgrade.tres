@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LaserUpgradeTemplate" load_steps=3 format=3 uid="uid://dw38dd5ctqqvu"]
+
+[ext_resource type="Script" uid="uid://cw6tfddef54u" path="res://scripts/upgrade templates/laser_upgrade_template.gd" id="1_5osyu"]
+[ext_resource type="Texture2D" uid="uid://daauovwx2l4fk" path="res://sprites/laser-icon.png" id="1_utf7r"]
+
+[resource]
+script = ExtResource("1_5osyu")
+distance = 128.0
+icon = ExtResource("1_utf7r")
+description = "Increase the range of the lasers"
+metadata/_custom_type_script = "uid://cw6tfddef54u"

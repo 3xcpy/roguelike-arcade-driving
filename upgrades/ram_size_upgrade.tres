@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RamUpgrade" load_steps=3 format=3 uid="uid://bvnshfxj6fm0l"]
+
+[ext_resource type="Texture2D" uid="uid://c00gyfbawlw8p" path="res://sprites/ram-icon.png" id="1_0t0yk"]
+[ext_resource type="Script" uid="uid://drmw3s644dh3g" path="res://scripts/upgrade templates/ram_upgrade.gd" id="1_bqdo4"]
+
+[resource]
+script = ExtResource("1_bqdo4")
+radius = 16.0
+icon = ExtResource("1_0t0yk")
+description = "Increase the size of the front damage area"
+metadata/_custom_type_script = "uid://drmw3s644dh3g"

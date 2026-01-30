@@ -73,8 +73,10 @@ distance_from_center = 64.0
 
 [node name="Ram" parent="Weapons" instance=ExtResource("6_fjrip")]
 position = Vector2(8, 0)
+damage = 2.0
 
 [node name="LaserEmitter" parent="Weapons" instance=ExtResource("7_smehm")]
+damage = 2.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0

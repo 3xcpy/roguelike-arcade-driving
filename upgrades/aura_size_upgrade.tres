@@ -7,5 +7,5 @@
 script = ExtResource("1_5w7ul")
 radius = 16.0
 icon = ExtResource("1_6kcxh")
-description = "Increase the aura area"
+description = "Increase the radius of the aura around you"
 metadata/_custom_type_script = "uid://knlr2h7xvtpj"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EyeballUpgrade" load_steps=3 format=3 uid="uid://hiwlfr558t5c"]
+
+[ext_resource type="Texture2D" uid="uid://bockus2fcd6ac" path="res://sprites/eyeballs-icon.png" id="1_2rqs0"]
+[ext_resource type="Script" uid="uid://mep4ovyjerpx" path="res://scripts/upgrade templates/eyeball_upgrade.gd" id="1_hfsij"]
+
+[resource]
+script = ExtResource("1_hfsij")
+damage = 1.0
+icon = ExtResource("1_2rqs0")
+description = "The orbs floating around you deal more damage"
+metadata/_custom_type_script = "uid://mep4ovyjerpx"
