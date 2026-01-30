@@ -24,7 +24,7 @@ func upload_data() -> void:
 
 
 func _init() -> void:
-	Global.floor = self
+	Global.ground = self
 
 
 func _physics_process(_delta: float) -> void:

@@ -1,7 +1,5 @@
 class_name UpgradeSelectScreen extends Control
 
-signal upgrade_selected(u: Upgrade)
-
 @onready var slot1_label: RichTextLabel = $MarginContainer/HBoxContainer/TextureButton/VBoxContainer/DescriptionLabel
 @onready var slot2_label: RichTextLabel = $MarginContainer/HBoxContainer/TextureButton2/VBoxContainer/DescriptionLabel
 @onready var slot3_label: RichTextLabel = $MarginContainer/HBoxContainer/TextureButton3/VBoxContainer/DescriptionLabel

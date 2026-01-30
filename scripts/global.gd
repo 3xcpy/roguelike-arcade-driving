@@ -1,6 +1,6 @@
 extends Node
 
-var floor: Floor = null
+var ground: Floor = null
 var game_manager: GameManager = null
 var upgrade_select_screen: UpgradeSelectScreen = null
 var player: Player = null
