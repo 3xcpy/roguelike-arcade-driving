@@ -22,6 +22,7 @@ func _ready() -> void:
 func set_slots(u1: Upgrade, u2: Upgrade, u3: Upgrade) -> void:
 	visible = true
 	get_tree().paused = true
+	Global.selecting_upgrades = true
 
 
 	slot1_label.text = u1.description
@@ -39,6 +40,7 @@ func select_upgrade(u: Upgrade) -> void:
 	u.apply(get_tree().get_first_node_in_group("Player"))
 	visible = false
 	get_tree().paused = false
+	Global.selecting_upgrades = false
 
 
 func _on_texture_button_button_up() -> void:

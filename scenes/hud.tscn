@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://b5jgdl7l0riaf" path="res://scripts/hud.gd" id="1_ahhtf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahhtf"]
+bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oo0fn"]
-bg_color = Color(1, 1, 1, 1)
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -28,12 +28,25 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="HealthBar" type="ProgressBar" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ScoreProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+texture_filter = 2
+custom_minimum_size = Vector2(512, 4)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ahhtf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_oo0fn")
+value = 1.0
+fill_mode = 1
+show_percentage = false
+
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
 texture_filter = 2
 custom_minimum_size = Vector2(128, 4)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_ahhtf")
 theme_override_styles/fill = SubResource("StyleBoxFlat_oo0fn")
-value = 99.65
+value = 100.0
 show_percentage = false

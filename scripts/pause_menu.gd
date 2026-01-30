@@ -11,12 +11,16 @@ func _process(_delta: float) -> void:
 
 
 func update_state() -> void:
-	get_tree().paused = paused
-	visible = paused
+	if !Global.selecting_upgrades:
+		get_tree().paused = paused
+		visible = paused
+	else:
+		visible = paused
 
 
 func _on_quit_to_menu_button_button_up() -> void:
 	paused = false
+	Global.selecting_upgrades = false
 	update_state()
 	quit_to_menu.emit()
 

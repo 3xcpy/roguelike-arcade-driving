@@ -68,6 +68,7 @@ theme_override_font_sizes/mono_font_size = 13
 bbcode_enabled = true
 text = "Multiplies the [b]aura[/b] radius by 2 and has many other interesting properties blablabla I need some text lorem ipsum blublub"
 fit_content = true
+scroll_active = false
 scroll_following_visible_characters = true
 
 [node name="TextureButton2" type="TextureButton" parent="MarginContainer/HBoxContainer"]
@@ -96,6 +97,7 @@ theme_override_font_sizes/mono_font_size = 13
 bbcode_enabled = true
 text = "Multiplies the [b]aura[/b] radius by 2 and has many other interesting properties blablabla I need some text lorem ipsum blublub"
 fit_content = true
+scroll_active = false
 scroll_following_visible_characters = true
 
 [node name="TextureButton3" type="TextureButton" parent="MarginContainer/HBoxContainer"]
@@ -124,6 +126,7 @@ theme_override_font_sizes/mono_font_size = 13
 bbcode_enabled = true
 text = "Multiplies the [b]aura[/b] radius by 2 and has many other interesting properties blablabla I need some text lorem ipsum blublub"
 fit_content = true
+scroll_active = false
 scroll_following_visible_characters = true
 
 [connection signal="button_up" from="MarginContainer/HBoxContainer/TextureButton" to="." method="_on_texture_button_button_up"]

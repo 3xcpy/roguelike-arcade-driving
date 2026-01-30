@@ -1,15 +1,17 @@
 class_name GameManager extends Node2D
 
-@export var initial_score_to_level: int = 10
+@export var initial_score_to_level: int = 5
 var level: int = 0
 var score_to_level: int = 0
-@export var scalar: float = 1.05
+var max_score_to_level: int = 0
 
 @export var upgrades: Array[Upgrade] = []
 
 
 func _ready() -> void:
 	Global.game_manager = self
+	score_to_level = initial_score_to_level
+	max_score_to_level = score_to_level
 
 
 func add_score(amount: int) -> void:
@@ -20,7 +22,8 @@ func add_score(amount: int) -> void:
 
 func levelup(overshoot: int) -> void:
 	level += 1
-	score_to_level = (int)(initial_score_to_level * pow(scalar, level))
+	score_to_level = score_to_level + 10
+	max_score_to_level = score_to_level
 	score_to_level -= overshoot
 	var u1 = upgrades[randi() % upgrades.size()]
 	var u2 = upgrades[randi() % upgrades.size()]
