@@ -12,6 +12,8 @@ class_name Player extends CharacterBody2D
 
 @export var wheel_base: float = 16.0 # distance between the front and back wheel
 
+@export var health_per_10_seconds: float = 1.0
+
 @onready var drift_particles: GPUParticles2D = $DriftParticles
 
 @onready var eyeballs: Eyeballs = $Weapons/Eyeballs
@@ -20,6 +22,8 @@ class_name Player extends CharacterBody2D
 @onready var laser_emitter: LaserEmitter = $Weapons/LaserEmitter
 
 @onready var health_component: HealthComponent = $HealthComponent
+
+var heal_timer: float = 0.0
 
 
 func damage(dmg: float): health_component.damage(dmg)
@@ -30,6 +34,10 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	heal_timer += delta
+	if heal_timer >= 10.0/health_per_10_seconds:
+		health_component.heal(1.0)
+
 	if velocity.length() < speed:
 		velocity += transform.x * accel * delta
 
