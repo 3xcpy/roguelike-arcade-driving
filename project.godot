@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="roguelike-arcade-driving"
+config/name="orble survivor"
+config/version="0.1"
 run/main_scene="uid://bi1kkpplws8fv"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://bf7iog2w4a0eo"
 
 [audio]
 
@@ -28,7 +29,6 @@ Global="*res://scripts/global.gd"
 
 window/size/viewport_width=640
 window/size/viewport_height=480
-window/size/mode=3
 window/stretch/mode="viewport"
 
 [editor_plugins]
