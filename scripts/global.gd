@@ -11,3 +11,6 @@ var current_index: int = 0
 func get_enemy_index() -> int:
 	current_index += 1
 	return current_index - 1
+
+var enemy_stat: int = 0
+var upgrade_stat: int = 0

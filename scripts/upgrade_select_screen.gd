@@ -38,6 +38,7 @@ func select_upgrade(u: Upgrade) -> void:
 	u.apply(get_tree().get_first_node_in_group("Player"))
 	visible = false
 	get_tree().paused = false
+	Global.upgrade_stat += 1
 	Global.selecting_upgrades = false
 
 

@@ -75,6 +75,7 @@ func damage(dmg: float): $HealthComponent.damage(dmg)
 
 func _on_health_component_dead() -> void:
 	Global.game_manager.add_score(value)
+	Global.enemy_stat += 1
 	queue_free()
 
 

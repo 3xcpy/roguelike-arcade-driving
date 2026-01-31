@@ -57,7 +57,7 @@ script = ExtResource("1_3vyb7")
 speed = 100.0
 traction = 5.0
 drift_trigger = 0.85
-health_per_10_seconds = 2.0
+health_per_10_seconds = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5707964
@@ -71,7 +71,7 @@ hurt_sound = ExtResource("4_ur7pv")
 [node name="Weapons" type="Node2D" parent="."]
 
 [node name="Eyeballs" parent="Weapons" instance=ExtResource("4_dqkch")]
-damage = 2.0
+damage = 3.0
 distance_from_center = 64.0
 
 [node name="Aura" parent="Weapons" instance=ExtResource("4_tuyoq")]
