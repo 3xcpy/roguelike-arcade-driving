@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqsaagtut61pi"]
+
+[ext_resource type="Script" uid="uid://cfiiga7nc3mpq" path="res://scripts/fullscreen_check_box.gd" id="1_wndg1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wndg1"]
+
+[node name="FullscreenCheckBox" type="CheckBox"]
+offset_right = 24.0
+offset_bottom = 24.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wndg1")
+text = "Fullscreen"
+script = ExtResource("1_wndg1")

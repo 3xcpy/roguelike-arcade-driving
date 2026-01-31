@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ooieugeebd34"]
+[gd_scene load_steps=4 format=3 uid="uid://ooieugeebd34"]
 
 [ext_resource type="Script" uid="uid://453b3vriypo0" path="res://scripts/pause_menu.gd" id="1_n87rw"]
 [ext_resource type="PackedScene" uid="uid://s60lun32nyh8" path="res://scenes/volume_control.tscn" id="2_myx47"]
+[ext_resource type="PackedScene" uid="uid://bqsaagtut61pi" path="res://scenes/fullscreen_check_box.tscn" id="3_kukqi"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -55,6 +56,17 @@ offset_top = -90.0
 offset_right = 24.0
 offset_bottom = 90.0
 grow_vertical = 2
+
+[node name="FullscreenCheckBox" parent="." instance=ExtResource("3_kukqi")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -39.0
+offset_right = 115.0
+offset_bottom = -8.0
+grow_vertical = 0
 
 [connection signal="button_up" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_button_up"]
 [connection signal="button_up" from="VBoxContainer/QuitToMenuButton" to="." method="_on_quit_to_menu_button_button_up"]

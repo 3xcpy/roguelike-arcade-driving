@@ -6,6 +6,7 @@ var upgrade_select_screen: UpgradeSelectScreen = null
 var player: Player = null
 
 var selecting_upgrades: bool = false
+var saved_window_mode: DisplayServer.WindowMode 
 
 var current_index: int = 0
 func get_enemy_index() -> int:
