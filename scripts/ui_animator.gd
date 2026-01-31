@@ -1,14 +1,29 @@
 class_name UIAnimator extends Node
 
+@export_group("Movement")
 @export var hover_scale: Vector2 = Vector2(1.0, 1.0)
 @export var hover_rotation: float = 0.0
 @export var time: float = 0.1
 @export var transition_type: Tween.TransitionType
 @export var ease_type: Tween.EaseType
 
+@export_group("Audio")
+@export var hover_sound: Resource = null
+@export var click_sound: Resource = null
+
+var _playback: AudioStreamPlaybackPolyphonic
+
 
 func _ready() -> void:
-	print("ui animator ready")
+	var asp = AudioStreamPlayer.new()
+	asp.bus = &"SFX"
+	add_child(asp)
+	var stream = AudioStreamPolyphonic.new()
+	stream.polyphony = 16
+	asp.stream = stream
+	asp.play()
+	_playback = asp.get_stream_playback()
+
 	get_tree().connect("node_added", _on_tree_node_added)
 
 
@@ -18,6 +33,9 @@ func _on_tree_node_added(node: Node) -> void:
 
 
 func on_hover(target: Control) -> void:
+	if hover_sound != null:
+		_playback.play_stream(hover_sound, 0, 0, randf_range(0.9, 1.1))
+
 	var t := get_tween()
 	if t:
 		t.tween_property(target, "scale", hover_scale, time)

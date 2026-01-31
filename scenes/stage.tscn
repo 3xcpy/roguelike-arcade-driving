@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://wb45rm4nabob"]
+[gd_scene load_steps=29 format=3 uid="uid://wb45rm4nabob"]
 
 [ext_resource type="PackedScene" uid="uid://dhtn00310jucy" path="res://scenes/player.tscn" id="1_8rem4"]
 [ext_resource type="Script" uid="uid://cjhq168l74jfy" path="res://scripts/game_manager.gd" id="1_st0q7"]
@@ -6,11 +6,19 @@
 [ext_resource type="Texture2D" uid="uid://phtn83sdcm6r" path="res://sprites/grid.png" id="2_gi7kc"]
 [ext_resource type="Shader" uid="uid://celbxoq3s5mxx" path="res://shaders/floor.gdshader" id="2_kewym"]
 [ext_resource type="Resource" uid="uid://bkrhmbdxhtt4c" path="res://upgrades/aura_size_upgrade.tres" id="3_0hg5s"]
+[ext_resource type="Resource" uid="uid://c052nidrmsnuo" path="res://upgrades/aura_damage_upgrade.tres" id="3_3bqjo"]
 [ext_resource type="Script" uid="uid://d3cvnf1armkbm" path="res://scripts/floor.gd" id="4_6c5u0"]
 [ext_resource type="Resource" uid="uid://ky42qs44pnrk" path="res://upgrades/eyeball_amount_upgrade.tres" id="4_jl6nj"]
 [ext_resource type="Resource" uid="uid://bp33modg0ejn8" path="res://upgrades/laser_speed_upgrade.tres" id="5_e38vs"]
+[ext_resource type="Resource" uid="uid://hiwlfr558t5c" path="res://upgrades/eyeball_damage_upgrade.tres" id="6_nea6r"]
 [ext_resource type="PackedScene" uid="uid://512cfge4e2ek" path="res://scenes/background_layer.tscn" id="7_1hwpr"]
+[ext_resource type="Resource" uid="uid://cw2omkatawqk0" path="res://upgrades/healing_upgrade.tres" id="7_drh8o"]
+[ext_resource type="Resource" uid="uid://cct1jadbmyu6y" path="res://upgrades/health_upgrade.tres" id="8_uw5rs"]
+[ext_resource type="Resource" uid="uid://bnal0nklmynrc" path="res://upgrades/laser_damage_upgrade.tres" id="9_oc2wl"]
+[ext_resource type="Resource" uid="uid://dw38dd5ctqqvu" path="res://upgrades/laser_range_upgrade.tres" id="10_1hlks"]
 [ext_resource type="PackedScene" uid="uid://bdyvjqmx0qurm" path="res://scenes/enemy_spawner.tscn" id="10_yd2gm"]
+[ext_resource type="Resource" uid="uid://xajplhq2wu5y" path="res://upgrades/ram_damage_upgrade.tres" id="12_5i7n2"]
+[ext_resource type="Resource" uid="uid://bvnshfxj6fm0l" path="res://upgrades/ram_size_upgrade.tres" id="13_rgw3t"]
 
 [sub_resource type="Gradient" id="Gradient_2so7o"]
 offsets = PackedFloat32Array(0, 0.6020761)
@@ -49,13 +57,13 @@ normal = Vector2(1, 0)
 normal = Vector2(-1, 0)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_st0q7"]
-vertices = PackedVector2Array(990, 9.9609375, 990, 990, 9.9609375, 990, 6.0390625, 6.0390625)
+vertices = PackedVector2Array(1490, 9.96875, 1490, 991.97656, 9.9609375, 990.0078, 6.0390625, 6.0234375)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(1000, 0, 1000, 1000, 0, 1000, -4, -4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1500, 0, 1500, 1002, 0, 1000, -4, -4)])
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_st0q7")
-upgrades = Array[ExtResource("2_dexii")]([ExtResource("3_0hg5s"), ExtResource("4_jl6nj"), ExtResource("5_e38vs")])
+upgrades = Array[ExtResource("2_dexii")]([ExtResource("3_3bqjo"), ExtResource("3_0hg5s"), ExtResource("4_jl6nj"), ExtResource("6_nea6r"), ExtResource("7_drh8o"), ExtResource("8_uw5rs"), ExtResource("9_oc2wl"), ExtResource("10_1hlks"), ExtResource("5_e38vs"), ExtResource("12_5i7n2"), ExtResource("13_rgw3t")])
 
 [node name="Player" parent="." instance=ExtResource("1_8rem4")]
 position = Vector2(51, 269)
@@ -64,7 +72,7 @@ position = Vector2(51, 269)
 z_index = -100
 texture_repeat = 2
 material = SubResource("ShaderMaterial_6c5u0")
-offset_right = 1000.0
+offset_right = 1500.0
 offset_bottom = 1000.0
 pivot_offset = Vector2(74, 114)
 texture = ExtResource("2_gi7kc")
@@ -84,11 +92,11 @@ shape = SubResource("WorldBoundaryShape2D_2so7o")
 shape = SubResource("WorldBoundaryShape2D_st0q7")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundaries"]
-position = Vector2(1000, 1000)
+position = Vector2(1500, 1000)
 shape = SubResource("WorldBoundaryShape2D_1hwpr")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Boundaries"]
-position = Vector2(1000, 1000)
+position = Vector2(1500, 1000)
 shape = SubResource("WorldBoundaryShape2D_dexii")
 
 [node name="BackgroundLayer" parent="." instance=ExtResource("7_1hwpr")]

@@ -14,5 +14,5 @@ func _physics_process(delta: float) -> void:
 
 func spawn() -> void:
 	var enemy: Enemy = enemy_scene.instantiate()
-	enemy.level = int(max(ceil(float(Global.game_manager.level) / 2.0) + randi_range(0, 2), 0.0))
+	enemy.level = int(max(ceil(float(Global.game_manager.level) / 2.0) + randi_range(0, 2), 1.0))
 	add_child(enemy)

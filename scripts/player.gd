@@ -37,6 +37,7 @@ func _physics_process(delta: float) -> void:
 	heal_timer += delta
 	if heal_timer >= 10.0/health_per_10_seconds:
 		health_component.heal(1.0)
+		heal_timer = 0.0
 
 	if velocity.length() < speed:
 		velocity += transform.x * accel * delta

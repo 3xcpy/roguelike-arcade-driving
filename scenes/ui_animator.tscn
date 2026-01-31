@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjdgthw5tihnc"]
+[gd_scene load_steps=3 format=3 uid="uid://bjdgthw5tihnc"]
 
 [ext_resource type="Script" uid="uid://cxyi4hky6fkic" path="res://scripts/ui_animator.gd" id="1_cwdqs"]
+[ext_resource type="AudioStream" uid="uid://rw3swkmr55pu" path="res://sounds/hover.wav" id="2_ddy6y"]
 
 [node name="UIAnimator" type="Node"]
 process_mode = 3
 script = ExtResource("1_cwdqs")
 hover_scale = Vector2(1.1, 1.1)
 hover_rotation = 2.0
+hover_sound = ExtResource("2_ddy6y")

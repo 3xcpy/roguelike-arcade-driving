@@ -22,7 +22,7 @@ func add_score(amount: int) -> void:
 
 func levelup(overshoot: int) -> void:
 	level += 1
-	score_to_level = score_to_level + 10 + round(pow(1.1, level))
+	score_to_level = score_to_level + 10 + round(pow(1.5, level))
 	max_score_to_level = score_to_level
 	score_to_level -= overshoot
 	var u1 = upgrades[randi() % upgrades.size()]

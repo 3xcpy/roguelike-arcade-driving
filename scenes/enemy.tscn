@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4sghwhykpity"]
+[gd_scene load_steps=10 format=3 uid="uid://b4sghwhykpity"]
 
 [ext_resource type="Script" uid="uid://bcoqb7ufp6dlg" path="res://scripts/enemy.gd" id="1_5uy6h"]
 [ext_resource type="Texture2D" uid="uid://jxabck5vuije" path="res://icon.svg" id="1_7p1mj"]
 [ext_resource type="Shader" uid="uid://d21ihhok85yj0" path="res://shaders/circle.gdshader" id="2_c4w8v"]
 [ext_resource type="Script" uid="uid://b6clcrk34j0p6" path="res://scripts/distortion_emitter.gd" id="2_md0e3"]
 [ext_resource type="PackedScene" uid="uid://c2q16yc375m54" path="res://scenes/health_component.tscn" id="3_4ra3w"]
+[ext_resource type="AudioStream" uid="uid://btike657pvui7" path="res://sounds/hurt_enemy.wav" id="6_nenq2"]
 [ext_resource type="PackedScene" uid="uid://bg5rhdxipkhro" path="res://scenes/damage_particles.tscn" id="6_xwavj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xwavj"]
@@ -35,6 +36,7 @@ metadata/_custom_type_script = "uid://b6clcrk34j0p6"
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_4ra3w")]
 max_health = 5.0
+hurt_sound = ExtResource("6_nenq2")
 
 [node name="DamageParticles" parent="." instance=ExtResource("6_xwavj")]
 

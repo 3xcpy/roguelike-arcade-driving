@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://s60lun32nyh8"]
+
+[ext_resource type="Script" uid="uid://0awl1tn40k7s" path="res://scripts/volume_control.gd" id="1_trkeq"]
+
+[node name="VolumeControl" type="VSlider"]
+process_mode = 3
+custom_minimum_size = Vector2(16, 180)
+offset_right = 16.0
+offset_bottom = 8.0
+max_value = 1.0
+step = 0.05
+value = 0.5
+script = ExtResource("1_trkeq")
+bus_name = &"SFX"

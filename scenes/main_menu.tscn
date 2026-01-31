@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://3hpv3lut38d3"]
+[gd_scene load_steps=5 format=3 uid="uid://3hpv3lut38d3"]
 
 [ext_resource type="Script" uid="uid://bqd0jm46whdok" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Shader" uid="uid://b0parpvmysipk" path="res://shaders/background.gdshader" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://s60lun32nyh8" path="res://scenes/volume_control.tscn" id="3_bqqt6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ekxnf"]
 shader = ExtResource("1_l6cm7")
@@ -49,6 +50,17 @@ text = "Start Game"
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="VolumeControl" parent="." instance=ExtResource("3_bqqt6")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -90.0
+offset_right = 24.0
+offset_bottom = 90.0
+grow_vertical = 2
 
 [connection signal="button_up" from="VBoxContainer/PlayButton" to="." method="_on_play_button_button_up"]
 [connection signal="button_up" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_button_up"]

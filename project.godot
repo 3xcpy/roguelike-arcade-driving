@@ -15,6 +15,10 @@ run/main_scene="uid://bi1kkpplws8fv"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://der1a1gck16h7"
+
 [autoload]
 
 UiAnimator="*res://scenes/ui_animator.tscn"

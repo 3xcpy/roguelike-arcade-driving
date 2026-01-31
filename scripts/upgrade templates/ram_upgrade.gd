@@ -8,7 +8,7 @@ class_name RamUpgrade extends Upgrade
 
 func apply(player: Player):
 	if radius > 0.0:
-		player.ram.radius += damage
+		player.ram.radius += radius
 	if radius_multiplier > 0.0:
 		player.ram.radius = player.ram.radius * radius_multiplier
 	if damage > 0.0:

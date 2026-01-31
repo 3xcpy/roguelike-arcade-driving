@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ooieugeebd34"]
+[gd_scene load_steps=3 format=3 uid="uid://ooieugeebd34"]
 
 [ext_resource type="Script" uid="uid://453b3vriypo0" path="res://scripts/pause_menu.gd" id="1_n87rw"]
+[ext_resource type="PackedScene" uid="uid://s60lun32nyh8" path="res://scenes/volume_control.tscn" id="2_myx47"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -43,6 +44,17 @@ text = "Resume"
 [node name="QuitToMenuButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit to Menu"
+
+[node name="VolumeControl" parent="." instance=ExtResource("2_myx47")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -90.0
+offset_right = 24.0
+offset_bottom = 90.0
+grow_vertical = 2
 
 [connection signal="button_up" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_button_up"]
 [connection signal="button_up" from="VBoxContainer/QuitToMenuButton" to="." method="_on_quit_to_menu_button_button_up"]
