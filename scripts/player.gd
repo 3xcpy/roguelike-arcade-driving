@@ -1,5 +1,7 @@
 class_name Player extends CharacterBody2D
 
+signal dead
+
 @export var speed: float = 200.0
 @export var accel: float = 100.0
 @export var bounce_force: float = 100.0
@@ -83,4 +85,4 @@ func _on_health_component_damaged(_damage: float) -> void:
 
 
 func _on_health_component_dead() -> void:
-	print("PLAYER DIED")
+	dead.emit()

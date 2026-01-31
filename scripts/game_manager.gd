@@ -1,5 +1,7 @@
 class_name GameManager extends Node2D
 
+signal game_over
+
 @export var initial_score_to_level: int = 5
 var level: int = 0
 var score_to_level: int = 0
@@ -29,3 +31,7 @@ func levelup(overshoot: int) -> void:
 	var u2 = upgrades[randi() % upgrades.size()]
 	var u3 = upgrades[randi() % upgrades.size()]
 	Global.upgrade_select_screen.set_slots(u1, u2, u3)
+
+
+func _on_player_dead() -> void:
+	game_over.emit()

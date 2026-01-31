@@ -71,3 +71,5 @@ text = "Continue"
 stream = ExtResource("3_wa2qn")
 autoplay = true
 bus = &"SFX"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
