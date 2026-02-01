@@ -22,6 +22,7 @@ signal dead
 @onready var aura: Aura = $Weapons/Aura
 @onready var ram: Ram = $Weapons/Ram
 @onready var laser_emitter: LaserEmitter = $Weapons/LaserEmitter
+@onready var damage_area_spawner: DamageAreaSpawner = $Weapons/DamageAreaSpawner
 
 @onready var health_component: HealthComponent = $HealthComponent
 
