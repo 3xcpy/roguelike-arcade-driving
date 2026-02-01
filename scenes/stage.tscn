@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://wb45rm4nabob"]
+[gd_scene load_steps=34 format=3 uid="uid://wb45rm4nabob"]
 
 [ext_resource type="PackedScene" uid="uid://dhtn00310jucy" path="res://scenes/player.tscn" id="1_8rem4"]
 [ext_resource type="Script" uid="uid://cjhq168l74jfy" path="res://scripts/game_manager.gd" id="1_st0q7"]
@@ -9,11 +9,15 @@
 [ext_resource type="Resource" uid="uid://c052nidrmsnuo" path="res://upgrades/aura_damage_upgrade.tres" id="3_3bqjo"]
 [ext_resource type="Script" uid="uid://d3cvnf1armkbm" path="res://scripts/floor.gd" id="4_6c5u0"]
 [ext_resource type="Resource" uid="uid://ky42qs44pnrk" path="res://upgrades/eyeball_amount_upgrade.tres" id="4_jl6nj"]
+[ext_resource type="Resource" uid="uid://b8qd6125e182f" path="res://upgrades/damage_area_damage_upgrade.tres" id="5_1hlks"]
 [ext_resource type="Resource" uid="uid://bp33modg0ejn8" path="res://upgrades/laser_speed_upgrade.tres" id="5_e38vs"]
+[ext_resource type="Resource" uid="uid://4kuac6djpi1i" path="res://upgrades/damage_area_lifetime_upgrade.tres" id="6_5i7n2"]
 [ext_resource type="Resource" uid="uid://hiwlfr558t5c" path="res://upgrades/eyeball_damage_upgrade.tres" id="6_nea6r"]
 [ext_resource type="PackedScene" uid="uid://512cfge4e2ek" path="res://scenes/background_layer.tscn" id="7_1hwpr"]
 [ext_resource type="Resource" uid="uid://cw2omkatawqk0" path="res://upgrades/healing_upgrade.tres" id="7_drh8o"]
 [ext_resource type="Resource" uid="uid://cihcc0hsr81ou" path="res://upgrades/eyeball_speed_upgrade.tres" id="7_nea6r"]
+[ext_resource type="Resource" uid="uid://cyfex5xpjm2c6" path="res://upgrades/damage_area_radius_upgrade.tres" id="7_rgw3t"]
+[ext_resource type="Resource" uid="uid://dsenij0mllx57" path="res://upgrades/damage_area_speed_upgrade.tres" id="8_hil6k"]
 [ext_resource type="Resource" uid="uid://cct1jadbmyu6y" path="res://upgrades/health_upgrade.tres" id="8_uw5rs"]
 [ext_resource type="Resource" uid="uid://bnal0nklmynrc" path="res://upgrades/laser_damage_upgrade.tres" id="9_oc2wl"]
 [ext_resource type="Resource" uid="uid://dw38dd5ctqqvu" path="res://upgrades/laser_range_upgrade.tres" id="10_1hlks"]
@@ -64,7 +68,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(1500, 0, 1500, 1002, 0,
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_st0q7")
-upgrades = Array[ExtResource("2_dexii")]([ExtResource("3_3bqjo"), ExtResource("3_0hg5s"), ExtResource("4_jl6nj"), ExtResource("6_nea6r"), ExtResource("7_nea6r"), ExtResource("7_drh8o"), ExtResource("8_uw5rs"), ExtResource("9_oc2wl"), ExtResource("10_1hlks"), ExtResource("5_e38vs"), ExtResource("12_5i7n2"), ExtResource("13_rgw3t")])
+upgrades = Array[ExtResource("2_dexii")]([ExtResource("3_3bqjo"), ExtResource("3_0hg5s"), ExtResource("5_1hlks"), ExtResource("6_5i7n2"), ExtResource("7_rgw3t"), ExtResource("8_hil6k"), ExtResource("4_jl6nj"), ExtResource("6_nea6r"), ExtResource("7_nea6r"), ExtResource("7_drh8o"), ExtResource("8_uw5rs"), ExtResource("9_oc2wl"), ExtResource("10_1hlks"), ExtResource("5_e38vs"), ExtResource("12_5i7n2"), ExtResource("13_rgw3t")])
 
 [node name="Player" parent="." instance=ExtResource("1_8rem4")]
 position = Vector2(51, 269)

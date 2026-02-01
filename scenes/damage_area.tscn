@@ -16,6 +16,7 @@ shader_parameter/wave_frequency = 0.0
 
 [node name="DamageArea" type="Area2D"]
 top_level = true
+z_index = -1
 script = ExtResource("1_c2uvg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

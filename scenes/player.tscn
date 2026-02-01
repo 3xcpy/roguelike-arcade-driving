@@ -71,11 +71,13 @@ hurt_sound = ExtResource("4_ur7pv")
 
 [node name="Weapons" type="Node2D" parent="."]
 
+[node name="DamageAreaSpawner" parent="Weapons" instance=ExtResource("10_d2wvv")]
+
+[node name="Aura" parent="Weapons" instance=ExtResource("4_tuyoq")]
+
 [node name="Eyeballs" parent="Weapons" instance=ExtResource("4_dqkch")]
 damage = 3.0
 distance_from_center = 64.0
-
-[node name="Aura" parent="Weapons" instance=ExtResource("4_tuyoq")]
 
 [node name="Ram" parent="Weapons" instance=ExtResource("6_fjrip")]
 position = Vector2(8, 0)
@@ -84,8 +86,6 @@ damage = 2.0
 [node name="LaserEmitter" parent="Weapons" instance=ExtResource("7_smehm")]
 lasers_per_second = 1
 shooting_sound = ExtResource("9_y4r1p")
-
-[node name="DamageAreaSpawner" parent="Weapons" instance=ExtResource("10_d2wvv")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0

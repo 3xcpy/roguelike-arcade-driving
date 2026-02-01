@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DamageAreaUpgradeTemplate" load_steps=3 format=3 uid="uid://dsenij0mllx57"]
+
+[ext_resource type="Script" uid="uid://bqgwrkct8ba4y" path="res://scripts/upgrade templates/damage_area_upgrade_template.gd" id="1_k2jl2"]
+[ext_resource type="Texture2D" uid="uid://4qustwnevnqa" path="res://sprites/damage-area-icon.png" id="1_smhun"]
+
+[resource]
+script = ExtResource("1_k2jl2")
+spawns_per_second = 0.5
+icon = ExtResource("1_smhun")
+description = "You leave behind damage areas more frequently"
+metadata/_custom_type_script = "uid://bqgwrkct8ba4y"
