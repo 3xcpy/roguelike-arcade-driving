@@ -50,5 +50,4 @@ func _physics_process(delta: float) -> void:
 				nearest = e
 		
 		if nearest and min_dist <= reach:
-			print(nearest)
 			shoot(nearest.global_position)

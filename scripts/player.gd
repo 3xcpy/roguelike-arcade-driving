@@ -82,7 +82,6 @@ func _physics_process(delta: float) -> void:
 func _on_health_component_damaged(_damage: float) -> void:
 	$DamageParticles.emitting = true
 	$DamageParticles.restart()
-	print("player damaged")
 
 
 func _on_health_component_dead() -> void:

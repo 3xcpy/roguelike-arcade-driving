@@ -55,7 +55,6 @@ func _on_button_up() -> void:
 
 
 func add_target(target: Control) -> void:
-	print(target)
 	var a = func(): on_hover(target)
 	target.mouse_entered.connect(a)
 	var b = func(): off_hover(target)
