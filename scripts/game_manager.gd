@@ -12,6 +12,8 @@ var max_score_to_level: int = 0
 
 func _ready() -> void:
 	Global.game_manager = self
+	Global.enemy_stat = 0
+	Global.upgrade_stat = 0
 	score_to_level = initial_score_to_level
 	max_score_to_level = score_to_level
 
