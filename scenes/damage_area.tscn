@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://w7v1okx1b6p6"]
+
+[ext_resource type="Script" uid="uid://df84ujx6ik1ku" path="res://scripts/damage_area.gd" id="1_c2uvg"]
+[ext_resource type="Shader" uid="uid://d21ihhok85yj0" path="res://shaders/circle.gdshader" id="2_a2a3j"]
+[ext_resource type="Texture2D" uid="uid://jxabck5vuije" path="res://icon.svg" id="3_oamld"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3s8oj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7yk5"]
+shader = ExtResource("2_a2a3j")
+shader_parameter/inside_color = Color(0.40784314, 0.40784314, 0.40784314, 0.6862745)
+shader_parameter/outline_color = Color(1, 1, 1, 0.7254902)
+shader_parameter/outline_thickness = 0.05
+shader_parameter/wave_size = 0.0
+shader_parameter/wave_frequency = 0.0
+
+[node name="DamageArea" type="Area2D"]
+top_level = true
+script = ExtResource("1_c2uvg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3s8oj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_y7yk5")
+texture = ExtResource("3_oamld")

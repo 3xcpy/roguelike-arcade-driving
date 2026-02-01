@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dhtn00310jucy"]
+[gd_scene load_steps=19 format=3 uid="uid://dhtn00310jucy"]
 
 [ext_resource type="Script" uid="uid://cldbibnmmw5k4" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://ce4htckcwoxf" path="res://scenes/distortion_emitter.tscn" id="2_g2els"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bg5rhdxipkhro" path="res://scenes/damage_particles.tscn" id="6_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://bs5aym1iwjsq" path="res://scenes/laser_emitter.tscn" id="7_smehm"]
 [ext_resource type="AudioStream" uid="uid://3tbog68vy8r1" path="res://sounds/laser_shoot.wav" id="9_y4r1p"]
+[ext_resource type="PackedScene" uid="uid://c0e0jx6q25ty5" path="res://scenes/damage_area_spawner.tscn" id="10_d2wvv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
 size = Vector2(8, 16)
@@ -83,6 +84,8 @@ damage = 2.0
 [node name="LaserEmitter" parent="Weapons" instance=ExtResource("7_smehm")]
 lasers_per_second = 1
 shooting_sound = ExtResource("9_y4r1p")
+
+[node name="DamageAreaSpawner" parent="Weapons" instance=ExtResource("10_d2wvv")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0

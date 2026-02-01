@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0e0jx6q25ty5"]
+
+[ext_resource type="Script" uid="uid://diydxk0nxm804" path="res://scripts/damage_area_spawner.gd" id="1_uxfo6"]
+[ext_resource type="PackedScene" uid="uid://w7v1okx1b6p6" path="res://scenes/damage_area.tscn" id="2_fojbh"]
+
+[node name="DamageAreaSpawner" type="Node2D"]
+script = ExtResource("1_uxfo6")
+damage_area = ExtResource("2_fojbh")
+spawns_per_second = 0.25
+radius = 32.0
+lifetime = 5.0
